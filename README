@@ -1,36 +1,20 @@
 Primary classes for use for this code are:
 FireEagleMethod -- call any of the standard Fire Eagle API methods
 FireEagleAuth -- util class for authorizing new access tokens
-FETester -- Flex app to for testing FireEagle* classes
 
 Requires source:
 Yahoo! YOS lib: http://developer.yahoo.com/flash/yos/
 as3corelib: http://code.google.com/p/as3corelib/
 
-FETester setup:
+Setup:
 -Download all source to <your extract path>
+ -will create <your extract path>/fireeagle-as3
+ -include source from <your extract path>/fireeagle-as3/src in your project
+ -see docs in <your extract path>/fireeagle-as3/Docs
 -Download YOS to <your extract path>
+ -include source from <your extract path>/yos_as3_sdk-1.1/Source
 -Download as3corelib to <your extract path>
--Create a new workspace in Flex Builder 3+. 
--Import FETester Flex project 
- -Right (or control) click in Flex Navigator, choose Import...
- -select Flex Builder/Flex Project, click Next
- -use project folder = <your extract path>/FETester
- -uncheck 'Use default location'
- -Finish
--Configure source directories
- -Select Window->Preferences...
- -General->Workspace->Linked Resources
- -New... Name: FE_AS3_LIB, Location: <your extract path>
- -Ok, Ok
--Make sure all source paths map correctly
- -Right (or control) click on FETester project in Flex Navigator
- -Select Flex Build Path
- -Verify all 3 paths are correct: src (FE AS3 classes), as3corelib (might have to change version), yos_as3_sdk (might have to change version)
--Optionally init your OAuth values
- -Open FETester.mxml code edit in FEProject project src
- -Edit 'init values for OAuth params' near top
--All set to run!
+ -include source from <your extract path>/as3corelib-.92.1/src
 
 
 Want TODO:
@@ -40,6 +24,5 @@ Want TODO:
 -add convenience classes for data types: User, Location, LocationHierarchy
 -add polling support
 -add XMPP support
--redo UI for FETester
 
 See http://fireeagle.yahoo.net for more info.

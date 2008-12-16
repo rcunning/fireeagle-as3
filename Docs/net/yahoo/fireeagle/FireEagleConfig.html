@@ -1,0 +1,429 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
+<meta content="FireEagleConfig,net.yahoo.fireeagle.FireEagleConfig,ACCESS_TOKEN_NAME,ACCESS_TOKEN_PATH,API_PATH,API_SERVER,AUTHORIZATION_PATH,AUTH_SERVER,FORMAT_JSON,FORMAT_XML,LOOKUP_API_METHOD,LOOKUP_API_PATH,MOBILE_AUTH_PATH,RECENT_API_METHOD,RECENT_API_PATH,REQUEST_TOKEN_NAME,REQUEST_TOKEN_PATH,UPDATE_API_METHOD,UPDATE_API_PATH,USER_API_METHOD,USER_API_PATH,WITHIN_API_METHOD,WITHIN_API_PATH" name="keywords">
+<title>net.yahoo.fireeagle.FireEagleConfig</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'FireEagleConfig - Fire Eagle API AS3 library';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">Fire Eagle API AS3 library</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?net/yahoo/fireeagle/FireEagleConfig.html&amp;net/yahoo/fireeagle/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;FireEagleConfig</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#constantSummary">Constants</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class FireEagleConfig"); titleBar_setSubNav(true,true,false,false,false,false,false,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">net.yahoo.fireeagle</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class FireEagleConfig</td>
+</tr>
+</table>
+<p></p>
+  A class for the strings used to generate Fire Eagle API calls.
+  You can override most of these strings if you want to point the library to
+  different servers or uses different paths for method calls. Be sure to 
+  regenerate derrived <code>API_PATH</code> strings if you change <code>API_PATH</code> or
+  any <code>API_METHOD</code> strings.  
+  
+  <p></p>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#ACCESS_TOKEN_PATH">ACCESS_TOKEN_PATH</a> : String = "/oauth/access_token"<div class="summaryTableDescription">[static]
+   The path used to convert a request token to an access token (after user authorizes)
+   from the authorization server.</div>
+</td><td class="summaryTableOwnerCol">FireEagleConfig</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#API_PATH">API_PATH</a> : String = "/api/0.1/"<div class="summaryTableDescription">[static]
+   The path of the Fire Eagle API methods on the Fire Eagle API server.</div>
+</td><td class="summaryTableOwnerCol">FireEagleConfig</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#API_SERVER">API_SERVER</a> : String = "https://fireeagle.yahooapis.com"<div class="summaryTableDescription">[static]
+   The protocol and hostname for the Fire Eagle API server.</div>
+</td><td class="summaryTableOwnerCol">FireEagleConfig</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#AUTHORIZATION_PATH">AUTHORIZATION_PATH</a> : String = "/oauth/authorize"<div class="summaryTableDescription">[static]
+   The path used to generate an authorize url that the user may be presented
+   to to authorize an app on the authorization server.</div>
+</td><td class="summaryTableOwnerCol">FireEagleConfig</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#AUTH_SERVER">AUTH_SERVER</a> : String = "https://fireeagle.yahoo.net"<div class="summaryTableDescription">[static]
+   The protocol and hostname for the Fire Eagle autorization server.</div>
+</td><td class="summaryTableOwnerCol">FireEagleConfig</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#LOOKUP_API_METHOD">LOOKUP_API_METHOD</a> : String = "lookup"<div class="summaryTableDescription">[static]
+   The lookup method name for the Fire Eagle API, and related events prepended in <code>FireEagleEvent</code>.</div>
+</td><td class="summaryTableOwnerCol">FireEagleConfig</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#LOOKUP_API_PATH">LOOKUP_API_PATH</a> : String<div class="summaryTableDescription">[static]
+   The lookup method path for the Fire Eagle API server.</div>
+</td><td class="summaryTableOwnerCol">FireEagleConfig</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#MOBILE_AUTH_PATH">MOBILE_AUTH_PATH</a> : String = "/oauth/mobile_auth/"<div class="summaryTableDescription">[static]
+   The path for mobile used to generate an authorize url that the user may be presented
+   to to authorize an app on the authorization server.</div>
+</td><td class="summaryTableOwnerCol">FireEagleConfig</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#RECENT_API_METHOD">RECENT_API_METHOD</a> : String = "recent"<div class="summaryTableDescription">[static]
+   The recent method name for the Fire Eagle API, and related events prepended in <code>FireEagleEvent</code>.</div>
+</td><td class="summaryTableOwnerCol">FireEagleConfig</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#RECENT_API_PATH">RECENT_API_PATH</a> : String<div class="summaryTableDescription">[static]
+   The recent method path for the Fire Eagle API server.</div>
+</td><td class="summaryTableOwnerCol">FireEagleConfig</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#REQUEST_TOKEN_PATH">REQUEST_TOKEN_PATH</a> : String = "/oauth/request_token"<div class="summaryTableDescription">[static]
+   The path used to get a new request token from the authorization server.</div>
+</td><td class="summaryTableOwnerCol">FireEagleConfig</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#UPDATE_API_METHOD">UPDATE_API_METHOD</a> : String = "update"<div class="summaryTableDescription">[static]
+   The update method name for the Fire Eagle API, and related events prepended in <code>FireEagleEvent</code>.</div>
+</td><td class="summaryTableOwnerCol">FireEagleConfig</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#UPDATE_API_PATH">UPDATE_API_PATH</a> : String<div class="summaryTableDescription">[static]
+   The update method path for the Fire Eagle API server.</div>
+</td><td class="summaryTableOwnerCol">FireEagleConfig</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#USER_API_METHOD">USER_API_METHOD</a> : String = "user"<div class="summaryTableDescription">[static]
+   The user method name for the Fire Eagle API, and related events prepended in <code>FireEagleEvent</code>.</div>
+</td><td class="summaryTableOwnerCol">FireEagleConfig</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#USER_API_PATH">USER_API_PATH</a> : String<div class="summaryTableDescription">[static]
+   The user method path for the Fire Eagle API server.</div>
+</td><td class="summaryTableOwnerCol">FireEagleConfig</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#WITHIN_API_METHOD">WITHIN_API_METHOD</a> : String = "within"<div class="summaryTableDescription">[static]
+   The within method name for the Fire Eagle API, and related events prepended in <code>FireEagleEvent</code>.</div>
+</td><td class="summaryTableOwnerCol">FireEagleConfig</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#WITHIN_API_PATH">WITHIN_API_PATH</a> : String<div class="summaryTableDescription">[static]
+   The within method path for the Fire Eagle API server.</div>
+</td><td class="summaryTableOwnerCol">FireEagleConfig</td>
+</tr>
+</table>
+</div>
+<a name="constantSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Constants</div>
+<table id="summaryTableConstant" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Constant</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#ACCESS_TOKEN_NAME">ACCESS_TOKEN_NAME</a> : String = "accessToken"<div class="summaryTableDescription">[static]
+   A name for converting a request token to an access token related events, prepended 
+   to event strings in <code>FireEagleEvent</code>.</div>
+</td><td class="summaryTableOwnerCol">FireEagleConfig</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#FORMAT_JSON">FORMAT_JSON</a> : String = "json"<div class="summaryTableDescription">[static]
+   The REST response format type string for JSON.</div>
+</td><td class="summaryTableOwnerCol">FireEagleConfig</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#FORMAT_XML">FORMAT_XML</a> : String = "xml"<div class="summaryTableDescription">[static]
+   The REST response format type string for XML.</div>
+</td><td class="summaryTableOwnerCol">FireEagleConfig</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#REQUEST_TOKEN_NAME">REQUEST_TOKEN_NAME</a> : String = "requestToken"<div class="summaryTableDescription">[static]
+   A name for new request token related events, prepended to event strings in <code>FireEagleEvent</code>.</div>
+</td><td class="summaryTableOwnerCol">FireEagleConfig</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="ACCESS_TOKEN_PATH"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ACCESS_TOKEN_PATH</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static var ACCESS_TOKEN_PATH:String = "/oauth/access_token"</code><p>
+   The path used to convert a request token to an access token (after user authorizes)
+   from the authorization server.
+   </p></div>
+<a name="API_PATH"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">API_PATH</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static var API_PATH:String = "/api/0.1/"</code><p>
+   The path of the Fire Eagle API methods on the Fire Eagle API server.
+   </p></div>
+<a name="API_SERVER"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">API_SERVER</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static var API_SERVER:String = "https://fireeagle.yahooapis.com"</code><p>
+   The protocol and hostname for the Fire Eagle API server.
+   </p></div>
+<a name="AUTHORIZATION_PATH"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">AUTHORIZATION_PATH</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static var AUTHORIZATION_PATH:String = "/oauth/authorize"</code><p>
+   The path used to generate an authorize url that the user may be presented
+   to to authorize an app on the authorization server.
+   </p></div>
+<a name="AUTH_SERVER"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">AUTH_SERVER</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static var AUTH_SERVER:String = "https://fireeagle.yahoo.net"</code><p>
+   The protocol and hostname for the Fire Eagle autorization server.
+   </p></div>
+<a name="LOOKUP_API_METHOD"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">LOOKUP_API_METHOD</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static var LOOKUP_API_METHOD:String = "lookup"</code><p>
+   The lookup method name for the Fire Eagle API, and related events prepended in <code>FireEagleEvent</code>.
+   </p></div>
+<a name="LOOKUP_API_PATH"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">LOOKUP_API_PATH</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static var LOOKUP_API_PATH:String</code><p>
+   The lookup method path for the Fire Eagle API server. Be sure to regenerate if you change the
+   <code>API_PATH</code>.
+   </p></div>
+<a name="MOBILE_AUTH_PATH"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">MOBILE_AUTH_PATH</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static var MOBILE_AUTH_PATH:String = "/oauth/mobile_auth/"</code><p>
+   The path for mobile used to generate an authorize url that the user may be presented
+   to to authorize an app on the authorization server.
+   </p></div>
+<a name="RECENT_API_METHOD"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">RECENT_API_METHOD</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static var RECENT_API_METHOD:String = "recent"</code><p>
+   The recent method name for the Fire Eagle API, and related events prepended in <code>FireEagleEvent</code>.
+   </p></div>
+<a name="RECENT_API_PATH"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">RECENT_API_PATH</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static var RECENT_API_PATH:String</code><p>
+   The recent method path for the Fire Eagle API server. Be sure to regenerate if you change the
+   <code>API_PATH</code>.
+   </p></div>
+<a name="REQUEST_TOKEN_PATH"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">REQUEST_TOKEN_PATH</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static var REQUEST_TOKEN_PATH:String = "/oauth/request_token"</code><p>
+   The path used to get a new request token from the authorization server.
+   </p></div>
+<a name="UPDATE_API_METHOD"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">UPDATE_API_METHOD</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static var UPDATE_API_METHOD:String = "update"</code><p>
+   The update method name for the Fire Eagle API, and related events prepended in <code>FireEagleEvent</code>.
+   </p></div>
+<a name="UPDATE_API_PATH"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">UPDATE_API_PATH</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static var UPDATE_API_PATH:String</code><p>
+   The update method path for the Fire Eagle API server. Be sure to regenerate if you change the
+   <code>API_PATH</code>.
+   </p></div>
+<a name="USER_API_METHOD"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">USER_API_METHOD</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static var USER_API_METHOD:String = "user"</code><p>
+   The user method name for the Fire Eagle API, and related events prepended in <code>FireEagleEvent</code>.
+   </p></div>
+<a name="USER_API_PATH"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">USER_API_PATH</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static var USER_API_PATH:String</code><p>
+   The user method path for the Fire Eagle API server. Be sure to regenerate if you change the
+   <code>API_PATH</code>.
+   </p></div>
+<a name="WITHIN_API_METHOD"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">WITHIN_API_METHOD</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static var WITHIN_API_METHOD:String = "within"</code><p>
+   The within method name for the Fire Eagle API, and related events prepended in <code>FireEagleEvent</code>.
+   </p></div>
+<a name="WITHIN_API_PATH"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">WITHIN_API_PATH</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static var WITHIN_API_PATH:String</code><p>
+   The within method path for the Fire Eagle API server. Be sure to regenerate if you change the
+   <code>API_PATH</code>.
+   </p></div>
+<a name="constantDetail"></a>
+<div class="detailSectionHeader">Constant detail</div>
+<a name="ACCESS_TOKEN_NAME"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ACCESS_TOKEN_NAME</td><td class="detailHeaderType">constant</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const ACCESS_TOKEN_NAME:String = "accessToken"</code><p>
+   A name for converting a request token to an access token related events, prepended 
+   to event strings in <code>FireEagleEvent</code>.
+   </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="FireEagleEvent.html" target="">FireEagleEvent</a>
+</div>
+</div>
+<a name="FORMAT_JSON"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">FORMAT_JSON</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const FORMAT_JSON:String = "json"</code><p>
+   The REST response format type string for JSON.
+   </p></div>
+<a name="FORMAT_XML"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">FORMAT_XML</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const FORMAT_XML:String = "xml"</code><p>
+   The REST response format type string for XML.
+   </p></div>
+<a name="REQUEST_TOKEN_NAME"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">REQUEST_TOKEN_NAME</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const REQUEST_TOKEN_NAME:String = "requestToken"</code><p>
+   A name for new request token related events, prepended to event strings in <code>FireEagleEvent</code>.
+   </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="FireEagleEvent.html" target="">FireEagleEvent</a>
+</div>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->
