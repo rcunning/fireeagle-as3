@@ -18,9 +18,7 @@ Setup:
 
 
 Want TODO:
--convert to using OAuth header requests
--add OAuth signature method choice
--use realm
+-add OAuth signature method choice (done in OAuthConnection, need it in FireEagleMethod)
 -add convenience classes for data types: User, Location, LocationHierarchy
 -add polling support
 -add XMPP support

@@ -4,7 +4,7 @@
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
 <link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
-<meta content="OAuthConnection,net.yahoo.fireeagle.OAuthConnection,_args,_callback,_consumer,_httpMethod,_token,_url,args,callback,consumer,token,url,asyncRequest,encodeVars,filterOAuthParams,makeUrlParams,setupGet,setupPost,signRequest,updateToken" name="keywords">
+<meta content="OAuthConnection,net.yahoo.fireeagle.OAuthConnection,_callback,_consumer,_httpMethod,_postArgs,_signatureMethod,_token,_url,_urlArgs,callback,consumer,postArgs,signatureMethod,token,url,asyncRequest,encodeVars,filterOAuthParams,makeUrlParams,setupGet,setupPost,signRequest,updateToken" name="keywords">
 <title>net.yahoo.fireeagle.OAuthConnection</title>
 </head>
 <body>
@@ -104,11 +104,6 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
 </tr>
 <tr class="">
-<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#args">args</a> : String<div class="summaryTableDescription">[read-only]
-   Returns the encoded POST vars for this connection.</div>
-</td><td class="summaryTableOwnerCol">OAuthConnection</td>
-</tr>
-<tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#callback">callback</a> : Object<div class="summaryTableDescription">[read-only]
    Returns the callback object for this connection.</div>
 </td><td class="summaryTableOwnerCol">OAuthConnection</td>
@@ -116,6 +111,16 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#consumer">consumer</a> : OAuthConsumer<div class="summaryTableDescription">[read-only]
    Returns the <code>OAuthConsumer</code> for this connection.</div>
+</td><td class="summaryTableOwnerCol">OAuthConnection</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#postArgs">postArgs</a> : String<div class="summaryTableDescription">[read-only]
+   Returns the encoded POST vars for this connection.</div>
+</td><td class="summaryTableOwnerCol">OAuthConnection</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#signatureMethod">signatureMethod</a> : IOAuthSignatureMethod<div class="summaryTableDescription">
+   Returns OAuth signature method implementation.</div>
 </td><td class="summaryTableOwnerCol">OAuthConnection</td>
 </tr>
 <tr class="">
@@ -138,11 +143,6 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
 </tr>
 <tr class="">
-<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_args">_args</a> : String = ""<div class="summaryTableDescription">
-   </div>
-</td><td class="summaryTableOwnerCol">OAuthConnection</td>
-</tr>
-<tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_callback">_callback</a> : Object<div class="summaryTableDescription">
    </div>
 </td><td class="summaryTableOwnerCol">OAuthConnection</td>
@@ -158,12 +158,27 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 </td><td class="summaryTableOwnerCol">OAuthConnection</td>
 </tr>
 <tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_postArgs">_postArgs</a> : String = ""<div class="summaryTableDescription">
+   </div>
+</td><td class="summaryTableOwnerCol">OAuthConnection</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_signatureMethod">_signatureMethod</a> : IOAuthSignatureMethod<div class="summaryTableDescription">
+   </div>
+</td><td class="summaryTableOwnerCol">OAuthConnection</td>
+</tr>
+<tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_token">_token</a> : OAuthToken<div class="summaryTableDescription">
    </div>
 </td><td class="summaryTableOwnerCol">OAuthConnection</td>
 </tr>
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_url">_url</a> : String = ""<div class="summaryTableDescription">
+   </div>
+</td><td class="summaryTableOwnerCol">OAuthConnection</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_urlArgs">_urlArgs</a> : Object = null<div class="summaryTableDescription">
    </div>
 </td><td class="summaryTableOwnerCol">OAuthConnection</td>
 </tr>
@@ -252,7 +267,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
-<a class="signatureLink" href="#signRequest()">signRequest</a>(httpMethod:String, url:String, args:Object = null, requestType:String = "OAUTH_REQUEST_TYPE_OBJECT"):*</div>
+<a class="signatureLink" href="#signRequest()">signRequest</a>(httpMethod:String, url:String, args:Object = null):void</div>
 <div class="summaryTableDescription">
    Signs the request using the method, url, args, OAuthConsumer and OAuthToken.</div>
 </td><td class="summaryTableOwnerCol">OAuthConnection</td>
@@ -266,34 +281,10 @@ showHideInherited();
 <div class="MainContent">
 <a name="propertyDetail"></a>
 <div class="detailSectionHeader">Property detail</div>
-<a name="_args"></a>
-<table cellspacing="0" cellpadding="0" class="detailHeader">
-<tr>
-<td class="detailHeaderName">_args</td><td class="detailHeaderType">property</td>
-</tr>
-</table>
-<div class="detailBody">
-<code>protected var _args:String = ""</code><p>
-   </p></div>
-<a name="args"></a>
-<table cellspacing="0" cellpadding="0" class="detailHeader">
-<tr>
-<td class="detailHeaderName">args</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
-</tr>
-</table>
-<div class="detailBody">
-<code>args:String</code>&nbsp;&nbsp;[read-only]<p>
-   Returns the encoded POST vars for this connection. 
-   Valid after a call to <code>setupGet</code> or <code>setupPost</code>.
-   </p><span class="label">Implementation</span>
-<br>
-<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get args():String</code>
-<br>
-</div>
 <a name="_callback"></a>
 <table cellspacing="0" cellpadding="0" class="detailHeader">
 <tr>
-<td class="detailHeaderName">_callback</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+<td class="detailHeaderName">_callback</td><td class="detailHeaderType">property</td>
 </tr>
 </table>
 <div class="detailBody">
@@ -345,6 +336,55 @@ showHideInherited();
 <div class="detailBody">
 <code>protected var _httpMethod:String = ""</code><p>
    </p></div>
+<a name="_postArgs"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_postArgs</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _postArgs:String = ""</code><p>
+   </p></div>
+<a name="postArgs"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">postArgs</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>postArgs:String</code>&nbsp;&nbsp;[read-only]<p>
+   Returns the encoded POST vars for this connection. 
+   Valid after a call to <code>setupGet</code> or <code>setupPost</code>.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get postArgs():String</code>
+<br>
+</div>
+<a name="_signatureMethod"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_signatureMethod</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _signatureMethod:IOAuthSignatureMethod</code><p>
+   </p></div>
+<a name="signatureMethod"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">signatureMethod</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>signatureMethod:IOAuthSignatureMethod</code>&nbsp;&nbsp;[read-write]<p>
+   Returns OAuth signature method implementation. 
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get signatureMethod():IOAuthSignatureMethod</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set signatureMethod(value:IOAuthSignatureMethod):void</code>
+<br>
+</div>
 <a name="_token"></a>
 <table cellspacing="0" cellpadding="0" class="detailHeader">
 <tr>
@@ -392,6 +432,15 @@ showHideInherited();
 <code>&nbsp;&nbsp;&nbsp;&nbsp;public function get url():String</code>
 <br>
 </div>
+<a name="_urlArgs"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_urlArgs</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _urlArgs:Object = null</code><p>
+   </p></div>
 <a name="constructorDetail"></a>
 <div class="detailSectionHeader">Constructor detail</div>
 <a name="OAuthConnection()"></a>
@@ -623,7 +672,7 @@ showHideInherited();
 </tr>
 </table>
 <div class="detailBody">
-<code>protected function signRequest(httpMethod:String, url:String, args:Object = null, requestType:String = "OAUTH_REQUEST_TYPE_OBJECT"):*</code><p>
+<code>protected function signRequest(httpMethod:String, url:String, args:Object = null):void</code><p>
    Signs the request using the method, url, args, OAuthConsumer and OAuthToken. 
    
    </p><span class="label">Parameters</span>
@@ -644,22 +693,6 @@ showHideInherited();
 </tr>
 <tr>
 <td width="20px"></td><td><code><span class="label">args</span>:Object</code> (default = <code>null</code>)<code></code> &mdash;    The arguments for this request, as name/value pairs.
-   </td>
-</tr>
-<tr>
-<td class="paramSpacer">&nbsp;</td>
-</tr>
-<tr>
-<td width="20px"></td><td><code><span class="label">requestType</span>:String</code> (default = "<code>OAUTH_REQUEST_TYPE_OBJECT</code>")<code></code> &mdash;  A request type that determines what OAuth signature is returned.
-   </td>
-</tr>
-</table>
-<p></p>
-<span class="label">Returns</span>
-<table border="0" cellspacing="0" cellpadding="0">
-<tr>
-<td width="20"></td><td><code>*</code> &mdash;     An object whose type is determined by the <code>requestType</code>. 
-   
    </td>
 </tr>
 </table>

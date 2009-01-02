@@ -11,6 +11,7 @@ package net.yahoo.fireeagle
 	import com.yahoo.oauth.OAuthSignatureMethod_HMAC_SHA1;
 	import com.yahoo.oauth.OAuthToken;
 	
+	import flash.net.URLRequestHeader;
 	import flash.net.URLRequestMethod;
 
 	/**
@@ -81,7 +82,11 @@ package net.yahoo.fireeagle
 		/**
 		 * @protected
 		 */
-		protected var _args:String = "";
+		protected var _postArgs:String = "";
+		/**
+		 * @protected
+		 */
+		protected var _urlArgs:Object = null;
 		/**
 		 * @protected
 		 */
@@ -90,6 +95,10 @@ package net.yahoo.fireeagle
 		 * @protected
 		 */
 		protected var _httpMethod:String = "";
+		/**
+		 * @protected
+		 */
+		protected var _signatureMethod:IOAuthSignatureMethod = new OAuthSignatureMethod_HMAC_SHA1();
 		
 		
 		/**
@@ -123,8 +132,8 @@ package net.yahoo.fireeagle
 		 * @return 
 		 * 
 		 */
-		public function get args():String {
-			return _args;
+		public function get postArgs():String {
+			return _postArgs;
 		}
 		/**
 		 * Returns the callback object for this connection. 
@@ -133,6 +142,22 @@ package net.yahoo.fireeagle
 		 */
 		public function get callback():Object {
 			return _callback;
+		}
+		/**
+		 * Returns OAuth signature method implementation. 
+		 * @return 
+		 * 
+		 */
+		public function get signatureMethod():IOAuthSignatureMethod {
+			return _signatureMethod;
+		}
+		/**
+		 * Set OAuth signature method implementation. 
+		 * @return 
+		 * 
+		 */
+		public function set signatureMethod(v:IOAuthSignatureMethod):void {
+			_signatureMethod = v;
 		}
 		
 		/**
@@ -189,11 +214,12 @@ package net.yahoo.fireeagle
 		public function setupGet(url:String, callback:Object, args:Object=null):void
 		{			
 			_httpMethod = URLRequestMethod.GET;
-			// get the OAuth args
-			var url_args:* = signRequest(_httpMethod, url, encodeVars(args));			
+			// setup the OAuth args and header
+			signRequest(_httpMethod, url, encodeVars(args));
 			// format the request url
-			_url = url + '?' + makeUrlParams(url_args);
-			_args = "";
+			var urlParams:String = makeUrlParams(_urlArgs);
+			_url = url + (urlParams.length > 0 ? '?' + urlParams : '');
+			_postArgs = "";
 			_callback = callback;
 		}
 		
@@ -209,11 +235,12 @@ package net.yahoo.fireeagle
 		public function setupPost(url:String, callback:Object, args:Object=null):void
 		{
 			_httpMethod = URLRequestMethod.POST;
-			// get the OAuth args
-			var url_args:* = signRequest(_httpMethod, url, encodeVars(args));
+			// setup the OAuth args and header
+			signRequest(_httpMethod, url, encodeVars(args));
 			// save the url and post args
-			_url = url + '?' + makeUrlParams(filterOAuthParams(url_args, true));
-			_args = makeUrlParams(filterOAuthParams(url_args, false));
+			var urlParams:String = makeUrlParams(filterOAuthParams(_urlArgs, true));
+			_url = url + (urlParams.length > 0 ? '?' + urlParams : '');
+			_postArgs = makeUrlParams(filterOAuthParams(_urlArgs, false));
 			_callback = callback;
 		}
 		
@@ -222,7 +249,7 @@ package net.yahoo.fireeagle
 		 */
 		public function asyncRequest():void
 		{
-			Connection.asyncRequest(_httpMethod, _url, _callback, _args);
+			Connection.asyncRequest(_httpMethod, _url, _callback, _postArgs);
 		}
 		
 		//
@@ -241,16 +268,13 @@ package net.yahoo.fireeagle
 		 * @see com.yahoo.oauth.OAuthRequest
 		 * @throws Error Throws an Error if the request cannot be signed.
 		 */	
-		protected function signRequest(httpMethod:String, url:String, args:Object=null, requestType:String="OAUTH_REQUEST_TYPE_OBJECT"/*OAuthRequest.OAUTH_REQUEST_TYPE_OBJECT*/):*
+		protected function signRequest(httpMethod:String, url:String, args:Object=null):void
 		{
 			// setup OAuth
 			var request:OAuthRequest = new OAuthRequest(httpMethod, url, args, consumer, token);
-			var signatureMethod:IOAuthSignatureMethod = new OAuthSignatureMethod_HMAC_SHA1();
 			
 			// sign the request, returning an Object containing all key, value pairs (oauth params not uri encoded)
-			var oauth_args:* = request.buildRequest(signatureMethod, requestType);
-			
-			return oauth_args;
+			_urlArgs = request.buildRequest(signatureMethod, OAuthRequest.OAUTH_REQUEST_TYPE_OBJECT, FireEagleConfig.OAUTH_REALM);
 		}
 		
 		/**

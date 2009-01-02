@@ -16,6 +16,10 @@ package net.yahoo.fireeagle
 	public class FireEagleConfig
 	{
 		/**
+		 * The OAuth realm for Fire Eagle autorization.
+		 */
+		public static var OAUTH_REALM:String        = "fireeagle.yahoo.net";
+		/**
 		 * The protocol and hostname for the Fire Eagle autorization server.
 		 */
 		public static var AUTH_SERVER:String        = "https://fireeagle.yahoo.net";

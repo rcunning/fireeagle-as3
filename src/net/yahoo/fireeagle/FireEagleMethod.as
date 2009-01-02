@@ -7,6 +7,7 @@ package net.yahoo.fireeagle
 	import com.adobe.serialization.json.JSON;
 	
 	import flash.events.EventDispatcher;
+	import flash.net.URLRequestHeader;
 	
 	/**
 	 * Dispatched when a <code>user</code> request succeeds.
@@ -131,7 +132,7 @@ package net.yahoo.fireeagle
 		 * 
 		 */
 		public function get args():String {
-			return _connection.args;
+			return _connection.postArgs;
 		}
 		
 		/**
@@ -199,12 +200,12 @@ package net.yahoo.fireeagle
 			format:String = null)
 		{	
 			_connection = new OAuthConnection(consumerKey, consumerSecret, tokenKey, tokenSecret);
-
+			
 			if (format != null) {
 				_format = format;
 			}
 		}
-			
+		
 		/**
 		 * Setup and potentially fire a Fire Eagle <code>user</code> API method call to retreive the current 
 		 * location of the user. Requires the FireEagle access token and secret for the user be used as opposed 
