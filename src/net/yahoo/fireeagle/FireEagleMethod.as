@@ -6,6 +6,8 @@ package net.yahoo.fireeagle
 {	
 	import com.adobe.serialization.json.JSON;
 	
+	import com.yahoo.oauth.IOAuthSignatureMethod;
+	
 	import flash.events.EventDispatcher;
 	import flash.net.URLRequestHeader;
 	
@@ -178,6 +180,15 @@ package net.yahoo.fireeagle
 		 */
 		public function set parseResult(v:Boolean):void {
 			_parseResult = v;
+		}
+		
+		/**
+		 * Set OAuth signature method implementation. 
+		 * @return 
+		 * 
+		 */
+		public function set signatureMethod(v:IOAuthSignatureMethod):void {
+			_connection.signatureMethod = v;
 		}
 		
 		/**
