@@ -18,7 +18,6 @@ Setup:
 
 
 Want TODO:
--add convenience classes for data types: User, Location, LocationHierarchy
 -add polling support
 -add XMPP support
 

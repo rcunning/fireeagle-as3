@@ -108,27 +108,44 @@ package net.yahoo.fireeagle
 		protected var _data:Object;
 		
 		/**
+		 * The event <code>FireEagleResponse</code> object.
+		 */	
+		protected var _response:FireEagleResponse;
+		
+		/**
 		 * Creates a new <code>FireEagleEvent</code> object.
 		 * @param type
 		 * @param data
+		 * @param response
 		 * @param bubbles
 		 * @param cancelable
 		 * 
 		 */	
-		public function FireEagleEvent(type:String, data:Object=null, bubbles:Boolean=false, cancelable:Boolean=false)
+		public function FireEagleEvent(type:String, data:Object=null, response:FireEagleResponse=null, bubbles:Boolean=false, cancelable:Boolean=false)
 		{
 			super(type, bubbles, cancelable);
 			_data = data;
+			_response = response;
 		}
 		
 		/**
-		 * The event data object. 
+		 * The event data object.
 		 * @return 
 		 * 
 		 */	
 		public function get data():Object
 		{
 			return _data;
+		}
+		
+		/**
+		 * The event <code>FireEagleResponse</code> object.
+		 * @return 
+		 * 
+		 */	
+		public function get response():FireEagleResponse
+		{
+			return _response;
 		}
 	}
 }

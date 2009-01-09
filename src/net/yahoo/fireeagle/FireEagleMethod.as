@@ -4,12 +4,12 @@ The copyrights embodied in the content of this file are licensed under the BSD (
 */
 package net.yahoo.fireeagle
 {	
-	import com.adobe.serialization.json.JSON;
+	import net.yahoo.fireeagle.oauth.OAuthConnection;
 	
+	import com.adobe.serialization.json.JSON;
 	import com.yahoo.oauth.IOAuthSignatureMethod;
 	
 	import flash.events.EventDispatcher;
-	import flash.net.URLRequestHeader;
 	
 	/**
 	 * Dispatched when a <code>user</code> request succeeds.
@@ -442,6 +442,7 @@ package net.yahoo.fireeagle
 				{
 					var rsp:String = response.responseText;
 					var ret:Object = rsp;
+					var feResponse:FireEagleResponse = null;
 					if (self.getResponseStatusOk(response.status)) 
 					{
 						if (_parseResult) {
@@ -462,6 +463,7 @@ package net.yahoo.fireeagle
 								} else {
 									// successfully parsed JSON
 									ret = json;
+									feResponse = new FireEagleResponse(json);
 								}
 							} else {
 								var xml:XML = null;
@@ -481,7 +483,7 @@ package net.yahoo.fireeagle
 							success(ret);
 						} else { 
 							// or just dispatch an event
-							self.dispatchEvent(new FireEagleEvent(methodName + FireEagleEvent.SUCCESS, ret));
+							self.dispatchEvent(new FireEagleEvent(methodName + FireEagleEvent.SUCCESS, ret, feResponse));
 						}
 					} else {
 						// status not "Ok" failure
