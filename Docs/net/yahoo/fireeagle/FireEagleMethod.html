@@ -4,7 +4,7 @@
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
 <link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
-<meta content="FireEagleMethod,net.yahoo.fireeagle.FireEagleMethod,_connection,_fireRequestAutomatically,_format,_parseResult,args,fireRequestAutomatically,format,parseResult,url,signatureMethod,asyncRequest,getRequest,getResponseStatusOk,lookup,makeCallbackObject,postRequest,recent,update,user,within" name="keywords">
+<meta content="FireEagleMethod,net.yahoo.fireeagle.FireEagleMethod,_connection,_fireRequestAutomatically,_format,_parseResult,args,connection,fireRequestAutomatically,format,parseResult,url,signatureMethod,asyncRequest,clone,getRequest,getResponseStatusOk,lookup,makeCallbackObject,postRequest,recent,update,user,within" name="keywords">
 <title>net.yahoo.fireeagle.FireEagleMethod</title>
 </head>
 <body>
@@ -86,6 +86,12 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 </td><td class="summaryTableOwnerCol">FireEagleMethod</td>
 </tr>
 <tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#connection">connection</a> : <a href="oauth/OAuthConnection.html">OAuthConnection</a>
+<div class="summaryTableDescription">[read-only]
+   The OAuthConnection being used.</div>
+</td><td class="summaryTableOwnerCol">FireEagleMethod</td>
+</tr>
+<tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#fireRequestAutomatically">fireRequestAutomatically</a> : Boolean<div class="summaryTableDescription">
    Whether or not to automatically fire API method requests when calling <code>FireEagleMethod</code> class methods.</div>
 </td><td class="summaryTableOwnerCol">FireEagleMethod</td>
@@ -163,6 +169,15 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <a class="signatureLink" href="#asyncRequest()">asyncRequest</a>():void</div>
 <div class="summaryTableDescription">
    Fire a previously setup Fire Eagle API method.</div>
+</td><td class="summaryTableOwnerCol">FireEagleMethod</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#clone()">clone</a>():<a href="../fireeagle/FireEagleMethod.html">FireEagleMethod</a>
+</div>
+<div class="summaryTableDescription">
+   Create a new <code>FireEagleMethod</code> object with the same properties as this one..</div>
 </td><td class="summaryTableOwnerCol">FireEagleMethod</td>
 </tr>
 <tr class="">
@@ -382,6 +397,21 @@ showHideInherited();
 <div class="detailBody">
 <code>protected var _connection:<a href="oauth/OAuthConnection.html">OAuthConnection</a></code><p>
    </p></div>
+<a name="connection"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">connection</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>connection:<a href="oauth/OAuthConnection.html">OAuthConnection</a></code>&nbsp;&nbsp;[read-only]<p>
+   The OAuthConnection being used.  
+    
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get connection():<a href="oauth/OAuthConnection.html">OAuthConnection</a></code>
+<br>
+</div>
 <a name="_fireRequestAutomatically"></a>
 <table cellspacing="0" cellpadding="0" class="detailHeader">
 <tr>
@@ -558,6 +588,29 @@ showHideInherited();
    because OAuth signatures can only be used once. 
     
    </p></div>
+<a name="clone()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">clone</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function clone():<a href="../fireeagle/FireEagleMethod.html">FireEagleMethod</a></code><p>
+   Create a new <code>FireEagleMethod</code> object with the same properties as this one.. 
+    
+   </p><p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../fireeagle/FireEagleMethod.html">FireEagleMethod</a></code> &mdash; 
+                          <code>FireEagleMethod</code>
+   
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
 <a name="getRequest()"></a>
 <table cellspacing="0" cellpadding="0" class="detailHeader">
 <tr>

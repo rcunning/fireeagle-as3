@@ -4,12 +4,12 @@ The copyrights embodied in the content of this file are licensed under the BSD (
 */
 package net.yahoo.fireeagle
 {	
-	import net.yahoo.fireeagle.oauth.OAuthConnection;
-	
 	import com.adobe.serialization.json.JSON;
 	import com.yahoo.oauth.IOAuthSignatureMethod;
 	
 	import flash.events.EventDispatcher;
+	
+	import net.yahoo.fireeagle.oauth.OAuthConnection;
 	
 	/**
 	 * Dispatched when a <code>user</code> request succeeds.
@@ -104,6 +104,16 @@ package net.yahoo.fireeagle
 		 * @protected
 		 */
 		protected var _parseResult:Boolean = true;
+		
+		/**
+		 * The OAuthConnection being used.  
+		 *  
+		 * @return 					the OAuthConnection
+		 * 
+		 */
+		public function get connection():OAuthConnection {
+			return _connection;
+		}
 		
 		/**
 		 * The REST request result data format.  
@@ -202,7 +212,7 @@ package net.yahoo.fireeagle
 		 * @param format			Either <code>FireEagleConfig.FORMAT_JSON</code> (default) or <code>FireEagleConfig.FORMAT_XML</code>, specifies
 		 * 							the API result data type.
 		 * 
-		 * @return					A new FireEagleMethod object
+		 * @return					A new <code>FireEagleMethod</code> object
 		 * 
 		 */
 		public function FireEagleMethod(
@@ -333,6 +343,22 @@ package net.yahoo.fireeagle
 		public function asyncRequest():void
 		{
 			_connection.asyncRequest();
+		}
+		
+		/**
+		 * Create a new <code>FireEagleMethod</code> object with the same properties as this one.. 
+		 *  
+		 * @return 		<code>FireEagleMethod</code>
+		 * 
+		 */	
+		public function clone():FireEagleMethod
+		{
+			return new FireEagleMethod(
+					_connection.consumer.key, 
+					_connection.consumer.secret, 
+					_connection.token.key, 
+					_connection.token.secret, 
+					format);
 		}
 		
 		

@@ -147,5 +147,26 @@ package net.yahoo.fireeagle
 		{
 			return _response;
 		}
+		
+		/**
+		 * Create a new <code>FireEagleEvent</code> object with the same properties as this one.
+		 * @return 		<code>FireEagleEvent</code>
+		 * 
+		 */	
+		public override function clone():Event
+		{
+			return duplicate();
+		}
+		
+		/**
+		 * Create a new <code>FireEagleEvent</code> object with the same properties as this one.
+		 * (Note, not named "clone" because of incompatible override return types)
+		 * @return 		<code>FireEagleEvent</code>
+		 * 
+		 */	
+		public function duplicate():FireEagleEvent
+		{
+			return new FireEagleEvent(type, data, response, bubbles, cancelable);
+		}
 	}
 }

@@ -1,0 +1,590 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../../print.css" type="text/css" media="print">
+<meta content="RecentPoller,net.yahoo.fireeagle.realtime.RecentPoller,COOKIE_NAME,_cookie,_currentPage,_feRecentMethod,_feUserMethod,_nextCall,_perPage,_timer,running,checkNow,onForward,onRecentSuccess,onTimer,start,stop,subscribe,unSubscribe" name="keywords">
+<title>net.yahoo.fireeagle.realtime.RecentPoller</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'RecentPoller - Fire Eagle API AS3 library';
+				var baseRef = '../../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">Fire Eagle API AS3 library</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../../all-classes.html')" href="../../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../../all-classes.html')" href="../../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../../index-list.html')" href="../../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../../index.html?net/yahoo/fireeagle/realtime/RecentPoller.html&amp;net/yahoo/fireeagle/realtime/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;RecentPoller</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a>&nbsp;| <a href="#eventSummary">Events</a>&nbsp;| <a href="#constantSummary">Constants</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class RecentPoller"); titleBar_setSubNav(true,true,false,false,true,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">net.yahoo.fireeagle.realtime</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class RecentPoller</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">RecentPoller <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../../images/inherit-arrow.gif"> flash.events.EventDispatcher</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Implements</td><td><a href="IFireEagleSubscribe.html">IFireEagleSubscribe</a></td>
+</tr>
+</table>
+<p></p>
+  A class for polling the Fire Eagle <code>recent</code>. After receiving recent 
+  location updates, it gets each user's location and dispatches a <code>FireEagleEvent.USER_SUCCESS</code> 
+  event for each user.  
+  
+  <p></p>
+<br>
+<span class="label">Example</span>
+<br>
+  <div class='listing'><pre>
+  var realtime:IFireEagleSubscribe = new RecentPoller(consumerKey, consumerSecret, generalToken, generalSecret);
+  
+  // Note, no error handling shown
+  realtime.addEventListener(FireEagleEvent.USER_SUCCESS, handleUserSuccess);
+  realtime.subscribe(userAccessToken, userAccessSecret);
+  realtime.start();
+  
+  function handleUserSuccess(e:FireEagleEvent):void
+  {
+    trace("Received user update, user timezone = " + e.data.timezone);
+  }
+  
+  </pre></div>
+  <p></p>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#running">running</a> : Boolean<div class="summaryTableDescription">[read-only]
+   Is polling for update.</div>
+</td><td class="summaryTableOwnerCol">RecentPoller</td>
+</tr>
+</table>
+</div>
+<a name="protectedPropertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Properties</div>
+<table id="summaryTableProtectedProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_cookie">_cookie</a> : SharedObject<div class="summaryTableDescription">
+   </div>
+</td><td class="summaryTableOwnerCol">RecentPoller</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_currentPage">_currentPage</a> : Number = 1<div class="summaryTableDescription">
+   </div>
+</td><td class="summaryTableOwnerCol">RecentPoller</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_feRecentMethod">_feRecentMethod</a> : <a href="../../fireeagle/FireEagleMethod.html">FireEagleMethod</a>
+<div class="summaryTableDescription">
+   </div>
+</td><td class="summaryTableOwnerCol">RecentPoller</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_feUserMethod">_feUserMethod</a> : <a href="../../fireeagle/FireEagleMethod.html">FireEagleMethod</a>
+<div class="summaryTableDescription">
+   </div>
+</td><td class="summaryTableOwnerCol">RecentPoller</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_nextCall">_nextCall</a> : Date<div class="summaryTableDescription">
+   </div>
+</td><td class="summaryTableOwnerCol">RecentPoller</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_perPage">_perPage</a> : Number = 100<div class="summaryTableDescription">
+   </div>
+</td><td class="summaryTableOwnerCol">RecentPoller</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_timer">_timer</a> : Timer<div class="summaryTableDescription">
+   </div>
+</td><td class="summaryTableOwnerCol">RecentPoller</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#RecentPoller()">RecentPoller</a>(consumerKey:String, consumerSecret:String, generalTokenKey:String, generalTokenSecret:String, delayMs:Number = 30000)</div>
+<div class="summaryTableDescription">
+   Class constructor.</div>
+</td><td class="summaryTableOwnerCol">RecentPoller</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#checkNow()">checkNow</a>():void</div>
+<div class="summaryTableDescription">
+   Hit the <code>recent</code> Fire Eagle method now to receive any user location updates.</div>
+</td><td class="summaryTableOwnerCol">RecentPoller</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#start()">start</a>():void</div>
+<div class="summaryTableDescription">
+   Start polling for subscriber updates.</div>
+</td><td class="summaryTableOwnerCol">RecentPoller</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#stop()">stop</a>():void</div>
+<div class="summaryTableDescription">
+   Stop polling for subscriber updates.</div>
+</td><td class="summaryTableOwnerCol">RecentPoller</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#subscribe()">subscribe</a>(tokenKey:String, tokenSecret:String):void</div>
+<div class="summaryTableDescription">
+   Subscribe to a user's location updates.</div>
+</td><td class="summaryTableOwnerCol">RecentPoller</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#unSubscribe()">unSubscribe</a>(tokenKey:String):void</div>
+<div class="summaryTableDescription">
+   Unsubscribe to a user's location updates.</div>
+</td><td class="summaryTableOwnerCol">RecentPoller</td>
+</tr>
+</table>
+</div>
+<a name="protectedMethodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Methods</div>
+<table id="summaryTableProtectedMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#onForward()">onForward</a>(e:Event):void</div>
+<div class="summaryTableDescription">
+   Forward events being listened to dispatch on this.</div>
+</td><td class="summaryTableOwnerCol">RecentPoller</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#onRecentSuccess()">onRecentSuccess</a>(e:<a href="../FireEagleEvent.html">FireEagleEvent</a>):void</div>
+<div class="summaryTableDescription">
+   Handle the <code>FireEagleEvent.RECENT_SUCCESS</code> Fire Eagle method to process which
+   users have updated location since the last call.</div>
+</td><td class="summaryTableOwnerCol">RecentPoller</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#onTimer()">onTimer</a>(e:TimerEvent):void</div>
+<div class="summaryTableDescription">
+   Handle timer event to implement poll.</div>
+</td><td class="summaryTableOwnerCol">RecentPoller</td>
+</tr>
+</table>
+</div>
+<a name="eventSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Events</div>
+<table id="summaryTableEvent" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Event</th><th>Summary</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:recentFailure">recentFailure</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  Dispatched when a <code>recent</code> request fails.</td><td class="summaryTableOwnerCol">RecentPoller</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:userFailure">userFailure</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  Dispatched when a <code>user</code> request fails.</td><td class="summaryTableOwnerCol">RecentPoller</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:userSuccess">userSuccess</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  Dispatched when a <code>user</code> request succeeds.</td><td class="summaryTableOwnerCol">RecentPoller</td>
+</tr>
+</table>
+</div>
+<a name="constantSummary"></a><a name="protectedConstantSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Constants</div>
+<table id="summaryTableProtectedConstant" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Constant</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#COOKIE_NAME">COOKIE_NAME</a> : String = "FireEagleRecentPoller"<div class="summaryTableDescription">[static]
+   </div>
+</td><td class="summaryTableOwnerCol">RecentPoller</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="_cookie"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_cookie</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _cookie:SharedObject</code><p>
+   </p></div>
+<a name="_currentPage"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_currentPage</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _currentPage:Number = 1</code><p>
+   </p></div>
+<a name="_feRecentMethod"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_feRecentMethod</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _feRecentMethod:<a href="../../fireeagle/FireEagleMethod.html">FireEagleMethod</a></code><p>
+   </p></div>
+<a name="_feUserMethod"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_feUserMethod</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _feUserMethod:<a href="../../fireeagle/FireEagleMethod.html">FireEagleMethod</a></code><p>
+   </p></div>
+<a name="_nextCall"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_nextCall</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _nextCall:Date</code><p>
+   </p></div>
+<a name="_perPage"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_perPage</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _perPage:Number = 100</code><p>
+   </p></div>
+<a name="running"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">running</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>running:Boolean</code>&nbsp;&nbsp;[read-only]<p>
+   Is polling for update.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get running():Boolean</code>
+<br>
+</div>
+<a name="_timer"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_timer</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _timer:Timer</code><p>
+   </p></div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="RecentPoller()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">RecentPoller</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function RecentPoller(consumerKey:String, consumerSecret:String, generalTokenKey:String, generalTokenSecret:String, delayMs:Number = 30000)</code><p>
+   Class constructor.
+   Creates a new <code>RecentPoller</code> object for the provided credentials. 
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">consumerKey</span>:String</code> &mdash;  The OAuth consumer key string to use for this connection.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">consumerSecret</span>:String</code> &mdash; The OAuth consumer secret string to use for this connection.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">generalTokenKey</span>:String</code> &mdash;  The OAuth general token key string to use for this connection. 
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">generalTokenSecret</span>:String</code> &mdash;  The OAuth general token secret string to use for this connection.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">delayMs</span>:Number</code> (default = <code>30000</code>)<code></code> &mdash;   The number of milliseconds between polls, defaults to 30 seconds (30000 ms).
+   
+   </td>
+</tr>
+</table>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="checkNow()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">checkNow</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function checkNow():void</code><p>
+   Hit the <code>recent</code> Fire Eagle method now to receive any user location updates.
+   Call <code>checkNow</code> before <code>start</code> to force all all recent updates to be
+   processed.
+   </p></div>
+<a name="onForward()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">onForward</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function onForward(e:Event):void</code><p>
+   Forward events being listened to dispatch on this.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:Event</code></td>
+</tr>
+</table>
+</div>
+<a name="onRecentSuccess()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">onRecentSuccess</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function onRecentSuccess(e:<a href="../FireEagleEvent.html">FireEagleEvent</a>):void</code><p>
+   Handle the <code>FireEagleEvent.RECENT_SUCCESS</code> Fire Eagle method to process which
+   users have updated location since the last call.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:<a href="../FireEagleEvent.html">FireEagleEvent</a></code></td>
+</tr>
+</table>
+</div>
+<a name="onTimer()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">onTimer</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function onTimer(e:TimerEvent):void</code><p>
+   Handle timer event to implement poll.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:TimerEvent</code></td>
+</tr>
+</table>
+</div>
+<a name="start()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">start</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function start():void</code><p>
+   Start polling for subscriber updates.
+   </p></div>
+<a name="stop()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">stop</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function stop():void</code><p>
+   Stop polling for subscriber updates.
+   </p></div>
+<a name="subscribe()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">subscribe</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function subscribe(tokenKey:String, tokenSecret:String):void</code><p>
+   Subscribe to a user's location updates.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">tokenKey</span>:String</code> &mdash;  User's access token key
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">tokenSecret</span>:String</code> &mdash; User's access token secret
+   
+   </td>
+</tr>
+</table>
+</div>
+<a name="unSubscribe()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">unSubscribe</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function unSubscribe(tokenKey:String):void</code><p>
+   Unsubscribe to a user's location updates.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">tokenKey</span>:String</code> &mdash;  User's access token key
+   
+   </td>
+</tr>
+</table>
+</div>
+<div class="detailSectionHeader">Event detail</div>
+<a name="event:recentFailure"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">recentFailure</td><td class="detailHeaderType">event&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href=""><code>FireEagleEvent</code></a>
+<br>
+<p></p><p>
+  Dispatched when a <code>recent</code> request fails.
+  </p></div>
+<a name="event:userFailure"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">userFailure</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href=""><code>FireEagleEvent</code></a>
+<br>
+<p></p><p>
+  Dispatched when a <code>user</code> request fails.
+  </p></div>
+<a name="event:userSuccess"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">userSuccess</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href=""><code>FireEagleEvent</code></a>
+<br>
+<p></p><p>
+  Dispatched when a <code>user</code> request succeeds.
+  </p></div>
+<a name="constantDetail"></a>
+<div class="detailSectionHeader">Constant detail</div>
+<a name="COOKIE_NAME"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">COOKIE_NAME</td><td class="detailHeaderType">constant</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected static const COOKIE_NAME:String = "FireEagleRecentPoller"</code><p>
+   </p></div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->

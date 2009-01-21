@@ -4,7 +4,9 @@ FireEagleAuth -- util class for authorizing new access tokens
 
 Requires source:
 Yahoo! YOS lib: http://developer.yahoo.com/flash/yos/
-as3corelib: http://code.google.com/p/as3corelib/
+
+Note: 
+JSON parse classes taken from as3corelib: http://code.google.com/p/as3corelib/
 
 Setup:
 -Download all source to <your extract path>
@@ -13,12 +15,8 @@ Setup:
  -see docs in <your extract path>/fireeagle-as3/Docs
 -Download YOS to <your extract path>
  -include source from <your extract path>/yos_as3_sdk-1.1/Source
--Download as3corelib to <your extract path>
- -include source from <your extract path>/as3corelib-.92.1/src
-
 
 Want TODO:
--add polling support
 -add XMPP support
 
 See http://fireeagle.yahoo.net for more info.
