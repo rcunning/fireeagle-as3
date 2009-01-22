@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2008 Yahoo! Inc.  All rights reserved.  
+Copyright (c) 2009 Yahoo! Inc.  All rights reserved.  
 The copyrights embodied in the content of this file are licensed under the BSD (revised) open source license
 */
 package net.yahoo.fireeagle.oauth
@@ -329,7 +329,8 @@ package net.yahoo.fireeagle.oauth
 			var params:Array = new Array();
 			for (var key:String in args) {
 				// OAuth lib did not encode the oauth params (need for '+' and '/' in oath nonce and sig), but don't double-encode our params
-				params.push(key+'='+(key.substring(0,6) == 'oauth_' ? encodeURIComponent(args[key]) : args[key]));
+				//params.push(key+'='+(key.substring(0,6) == 'oauth_' ? encodeURIComponent(args[key]) : args[key]));
+				params.push(key+'='+args[key]);
 			}
 			params.sort();
 			return params.join('&');
