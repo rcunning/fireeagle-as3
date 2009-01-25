@@ -2,30 +2,31 @@
 Copyright (c) 2009 Yahoo! Inc.  All rights reserved.  
 The copyrights embodied in the content of this file are licensed under the BSD (revised) open source license
 */
-package net.yahoo.fireeagle
+package net.yahoo.fireeagle.data
 {
-	import net.yahoo.fireeagle.util.JSONObject;
+	import net.yahoo.fireeagle.IFireEagleResponse;
+	
 	/**
 	 * Wrapper class for JSON parsed Fire Eagle response objects.
 	 * @author Ryan Cunningham (rcunning@yahoo-inc.com)
 	 * 
 	 */
-	public class FireEagleResponse extends JSONObject
+	public class JSONResponse extends JSONObject implements IFireEagleResponse
 	{
 		/**
-		 * An array of <code>FireEagleUser</code> object if parsed from the response.
+		 * An array of <code>JSONUser</code> object if parsed from the response.
 		 */
 		protected var _users:Array;
 		/**
-		 * An array of <code>FireEagleLocation</code> object if parsed from the response.
+		 * An array of <code>JSONLocation</code> object if parsed from the response.
 		 */
 		protected var _locations:Array;
 		
 		/**
-		 * Creates a new <code>FireEagleResponse</code> object.
+		 * Creates a new <code>JSONResponse</code> object.
 		 * @param obj
 		 */
-		public function FireEagleResponse(obj:Object)
+		public function JSONResponse(obj:Object)
 		{
 			super(obj);
 		}
@@ -41,31 +42,31 @@ package net.yahoo.fireeagle
 		}
 		
 		/**
-		 * Gets any <code>FireEagleUser</user> objects parsed from the response.
-		 * @return 					array of <code>FireEagleUser</user>
+		 * Gets any <code>JSONUser</user> objects parsed from the response.
+		 * @return 					array of <code>JSONUser</user>
 		 * 
 		 */
 		public function get users():Array
 		{
 			if (_users == null) {
 				if (data.hasOwnProperty("user")) {
-					_users = new Array(new FireEagleUser(data.user));
+					_users = new Array(new JSONUser(data.user));
 				} else {
-					_users = parseToArray(data, "users", FireEagleUser);
+					_users = parseToArray(data, "users", JSONUser);
 				}
 			}
 			return _users;
 		}
 		
 		/**
-		 * Gets any <code>FireEagleLocation</user> objects parsed from the response.
-		 * @return 					array of <code>FireEagleLocation</user>
+		 * Gets any <code>JSONLocation</user> objects parsed from the response.
+		 * @return 					array of <code>JSONLocation</user>
 		 * 
 		 */
 		public function get locations():Array
 		{
 			if (_locations == null) {
-				_locations = parseToArray(data, "locations", FireEagleLocation);
+				_locations = parseToArray(data, "locations", JSONLocation);
 			}
 			return _locations;
 		}
@@ -76,7 +77,7 @@ package net.yahoo.fireeagle
 		 */
 		public function toString():String
 		{
-			return "FireEagleResponse{success:"+success+
+			return "JSONResponse{success:"+success+
 			", users:"+users+
 			", locations:"+locations+
 			"}";

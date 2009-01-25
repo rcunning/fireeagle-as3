@@ -2,7 +2,7 @@
 Copyright (c) 2009 Yahoo! Inc.  All rights reserved.  
 The copyrights embodied in the content of this file are licensed under the BSD (revised) open source license
 */
-package net.yahoo.fireeagle.util
+package net.yahoo.fireeagle.data
 {
 	import net.yahoo.fireeagle.location.BoundingBox;
 	import net.yahoo.fireeagle.location.LatLon;
@@ -38,7 +38,7 @@ package net.yahoo.fireeagle.util
 		}
 		
 		/**
-		 * Parses a JSON object with numeric properties to a typed Array.
+		 * Parses a JSON object with numeric properties to a typed <code>Array</code>.
 		 * @param obj				The JSON object to parse from
 		 * @param propertyName		The name of the property on <code>obj</code> that contains the numeric properties to parse
 		 * @param classToContruct	The <code>Class</code> of the returned array item data to contruct from each numeric property
@@ -57,27 +57,23 @@ package net.yahoo.fireeagle.util
 		}
 		
 		/**
-		 * Parses a JSON date/time object to a Date.
+		 * Parses a JSON date/time object to a <code>Date</code>.
 		 * @param obj				The JSON object to parse from
-		 * @return 					A new Date, or null if the parse failed
+		 * @return 					A new <code>Date</code>, or null if the parse failed
 		 * 
 		 */
 		public static function parseToDate(obj:Object):Date
 		{
 			if (obj != null) {
-				var utc:String = obj.toString().replace(/(.*)-(.*)-(.*)T(.*)-(.*):(.*)/, "$1/$2/$3 $4 UTC-$5$6");
-				var val:Number = Date.parse(utc);
-				if (!isNaN(val)) {
-					return new Date(val);
-				}
+				return ParseHelpers.parseToDate(obj.toString());
 			}
 			return null;
 		}
 		
 		/**
-		 * Parses a JSON geo point object to a LatLon.
+		 * Parses a JSON geo point object to a <code>LatLon</code>.
 		 * @param obj				The JSON object to parse from
-		 * @return 					A new LatLon, or null if the parse failed
+		 * @return 					A new <code>LatLon</code>, or null if the parse failed
 		 * 
 		 */
 		public static function parseToLatLon(obj:Object):LatLon
@@ -89,9 +85,9 @@ package net.yahoo.fireeagle.util
 		}
 		
 		/**
-		 * Parses a JSON geo bounding box object to a BoundingBox.
+		 * Parses a JSON geo bounding box object to a <code>BoundingBox</code>.
 		 * @param obj				The JSON object to parse from
-		 * @return 					A new BoundingBox, or null if the parse failed
+		 * @return 					A new <code>BoundingBox</code>, or null if the parse failed
 		 * 
 		 */
 		public static function parseToBoundingBox(obj:Object):BoundingBox

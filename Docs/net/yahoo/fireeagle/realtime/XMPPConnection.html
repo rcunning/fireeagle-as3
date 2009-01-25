@@ -1,0 +1,695 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../../print.css" type="text/css" media="print">
+<meta content="XMPPConnection,net.yahoo.fireeagle.realtime.XMPPConnection,_connection,_consumerKey,_consumerSecret,running,onAuthFailed,onAuthSucceeded,onConnectFailed,onConnected,onDisconnected,onPubSubItem,onSecure,onSession,start,stop,subscribe,unSubscribe" name="keywords">
+<title>net.yahoo.fireeagle.realtime.XMPPConnection</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'XMPPConnection - Fire Eagle API AS3 library';
+				var baseRef = '../../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">Fire Eagle API AS3 library</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../../all-classes.html')" href="../../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../../all-classes.html')" href="../../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../../index-list.html')" href="../../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../../index.html?net/yahoo/fireeagle/realtime/XMPPConnection.html&amp;net/yahoo/fireeagle/realtime/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;XMPPConnection</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a>&nbsp;| <a href="#eventSummary">Events</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class XMPPConnection"); titleBar_setSubNav(false,true,false,false,true,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">net.yahoo.fireeagle.realtime</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class XMPPConnection</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">XMPPConnection <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../../images/inherit-arrow.gif"> flash.events.EventDispatcher</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Implements</td><td><a href="../IFireEagleSubscribe.html">IFireEagleSubscribe</a></td>
+</tr>
+</table>
+<p></p>
+  A class for connecting to an XMPP server to subscribe and listen for the Fire Eagle user location updates. 
+  A <code>FireEagleEvent.USER_SUCCESS</code> is dispatched for each subscribed user location update.
+  
+  <p></p>
+<br>
+<span class="label">Example</span>
+<br>
+  <div class='listing'><pre></pre></div><p></p>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#running">running</a> : Boolean<div class="summaryTableDescription">[read-only]
+   Is connected.</div>
+</td><td class="summaryTableOwnerCol">XMPPConnection</td>
+</tr>
+</table>
+</div>
+<a name="protectedPropertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Properties</div>
+<table id="summaryTableProtectedProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_connection">_connection</a> : XMPP<div class="summaryTableDescription">
+   </div>
+</td><td class="summaryTableOwnerCol">XMPPConnection</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_consumerKey">_consumerKey</a> : String<div class="summaryTableDescription">
+   </div>
+</td><td class="summaryTableOwnerCol">XMPPConnection</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_consumerSecret">_consumerSecret</a> : String<div class="summaryTableDescription">
+   </div>
+</td><td class="summaryTableOwnerCol">XMPPConnection</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#XMPPConnection()">XMPPConnection</a>(jid:String, password:String, server:String = null, consumerKey:String = null, consumerSecret:String = null)</div>
+<div class="summaryTableDescription">
+   Class constructor.</div>
+</td><td class="summaryTableOwnerCol">XMPPConnection</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#start()">start</a>():void</div>
+<div class="summaryTableDescription">
+   Connect to the xmpp server.</div>
+</td><td class="summaryTableOwnerCol">XMPPConnection</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#stop()">stop</a>():void</div>
+<div class="summaryTableDescription">
+   Disconnect from the xmpp server.</div>
+</td><td class="summaryTableOwnerCol">XMPPConnection</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#subscribe()">subscribe</a>(tokenKey:String, tokenSecret:String):void</div>
+<div class="summaryTableDescription">
+   Subscribe to a user's location updates.</div>
+</td><td class="summaryTableOwnerCol">XMPPConnection</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#unSubscribe()">unSubscribe</a>(tokenKey:String, tokenSecret:String):void</div>
+<div class="summaryTableDescription">
+   Unsubscribe to a user's location updates.</div>
+</td><td class="summaryTableOwnerCol">XMPPConnection</td>
+</tr>
+</table>
+</div>
+<a name="protectedMethodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Methods</div>
+<table id="summaryTableProtectedMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#onAuthFailed()">onAuthFailed</a>(e:XMPPEvent):void</div>
+<div class="summaryTableDescription">
+   Handle XMPP auth fail event and forward as our typed event.</div>
+</td><td class="summaryTableOwnerCol">XMPPConnection</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#onAuthSucceeded()">onAuthSucceeded</a>(e:XMPPEvent):void</div>
+<div class="summaryTableDescription">
+   Handle XMPP auth success event and forward as our typed event.</div>
+</td><td class="summaryTableOwnerCol">XMPPConnection</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#onConnected()">onConnected</a>(e:StreamEvent):void</div>
+<div class="summaryTableDescription">
+   Handle XMPP connect event and forward as our typed event.</div>
+</td><td class="summaryTableOwnerCol">XMPPConnection</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#onConnectFailed()">onConnectFailed</a>(e:StreamEvent):void</div>
+<div class="summaryTableDescription">
+   Handle XMPP connection fail event and forward as our typed event.</div>
+</td><td class="summaryTableOwnerCol">XMPPConnection</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#onDisconnected()">onDisconnected</a>(e:StreamEvent):void</div>
+<div class="summaryTableDescription">
+   Handle XMPP disconnect event and forward as our typed event.</div>
+</td><td class="summaryTableOwnerCol">XMPPConnection</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#onPubSubItem()">onPubSubItem</a>(e:PubSubEvent):void</div>
+<div class="summaryTableDescription">
+   Handle the XMPP pubsub event to, parse and convert it to a <code>FireEagleEvent.USER_SUCCESS</code> event.</div>
+</td><td class="summaryTableOwnerCol">XMPPConnection</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#onSecure()">onSecure</a>(e:XMPPEvent):void</div>
+<div class="summaryTableDescription">
+   Handle XMPP secure event and forward as our typed event.</div>
+</td><td class="summaryTableOwnerCol">XMPPConnection</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#onSession()">onSession</a>(e:XMPPEvent):void</div>
+<div class="summaryTableDescription">
+   Handle XMPP session event and forward as our typed event.</div>
+</td><td class="summaryTableOwnerCol">XMPPConnection</td>
+</tr>
+</table>
+</div>
+<a name="eventSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Events</div>
+<table id="summaryTableEvent" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Event</th><th>Summary</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:userSuccess">userSuccess</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  Dispatched when a user location update has been received.</td><td class="summaryTableOwnerCol">XMPPConnection</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:xmppAuthFail">xmppAuthFail</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  Dispatched when XMPP authorization has failed..</td><td class="summaryTableOwnerCol">XMPPConnection</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:xmppAuthSuccess">xmppAuthSuccess</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  Dispatched when XMPP authorization has succeeded.</td><td class="summaryTableOwnerCol">XMPPConnection</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:xmppConnect">xmppConnect</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  Dispatched when the XMPP socket has been connected.</td><td class="summaryTableOwnerCol">XMPPConnection</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:xmppConnectFail">xmppConnectFail</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  Dispatched when the XMPP socket connection has failed.</td><td class="summaryTableOwnerCol">XMPPConnection</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:xmppDisconnect">xmppDisconnect</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  Dispatched when the XMPP socket has been disconnected.</td><td class="summaryTableOwnerCol">XMPPConnection</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:xmppSecure">xmppSecure</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  Dispatched when a secure XMPP connection is established.</td><td class="summaryTableOwnerCol">XMPPConnection</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:xmppSession">xmppSession</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  Dispatched when when the XMPP session has been established successfully.</td><td class="summaryTableOwnerCol">XMPPConnection</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="_connection"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_connection</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _connection:XMPP</code><p>
+   </p></div>
+<a name="_consumerKey"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_consumerKey</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _consumerKey:String</code><p>
+   </p></div>
+<a name="_consumerSecret"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_consumerSecret</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _consumerSecret:String</code><p>
+   </p></div>
+<a name="running"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">running</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>running:Boolean</code>&nbsp;&nbsp;[read-only]<p>
+   Is connected.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get running():Boolean</code>
+<br>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="XMPPConnection()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">XMPPConnection</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function XMPPConnection(jid:String, password:String, server:String = null, consumerKey:String = null, consumerSecret:String = null)</code><p>
+   Class constructor.
+   Creates a new <code>XMPPConnection</code> object for the provided credentials. 
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">jid</span>:String</code> &mdash;    The jid to use for XMPP connection, may include the </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">password</span>:String</code> &mdash;   The password to use for XMPP connection.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">server</span>:String</code> (default = <code>null</code>)<code></code> &mdash;   The server to use for XMPP connection, optional.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">consumerKey</span>:String</code> (default = <code>null</code>)<code></code> &mdash;  The OAuth consumer key string to use for subscribe/unSubscribe, optional. (NOT USED)
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">consumerSecret</span>:String</code> (default = <code>null</code>)<code></code> &mdash; The OAuth consumer secret string to use for subscribe/unSubscribe, optional. (NOT USED)
+   
+   </td>
+</tr>
+</table>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="onAuthFailed()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">onAuthFailed</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function onAuthFailed(e:XMPPEvent):void</code><p>
+   Handle XMPP auth fail event and forward as our typed event.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:XMPPEvent</code></td>
+</tr>
+</table>
+</div>
+<a name="onAuthSucceeded()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">onAuthSucceeded</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function onAuthSucceeded(e:XMPPEvent):void</code><p>
+   Handle XMPP auth success event and forward as our typed event.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:XMPPEvent</code></td>
+</tr>
+</table>
+</div>
+<a name="onConnected()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">onConnected</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function onConnected(e:StreamEvent):void</code><p>
+   Handle XMPP connect event and forward as our typed event.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:StreamEvent</code></td>
+</tr>
+</table>
+</div>
+<a name="onConnectFailed()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">onConnectFailed</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function onConnectFailed(e:StreamEvent):void</code><p>
+   Handle XMPP connection fail event and forward as our typed event.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:StreamEvent</code></td>
+</tr>
+</table>
+</div>
+<a name="onDisconnected()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">onDisconnected</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function onDisconnected(e:StreamEvent):void</code><p>
+   Handle XMPP disconnect event and forward as our typed event.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:StreamEvent</code></td>
+</tr>
+</table>
+</div>
+<a name="onPubSubItem()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">onPubSubItem</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function onPubSubItem(e:PubSubEvent):void</code><p>
+   Handle the XMPP pubsub event to, parse and convert it to a <code>FireEagleEvent.USER_SUCCESS</code> event.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:PubSubEvent</code></td>
+</tr>
+</table>
+</div>
+<a name="onSecure()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">onSecure</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function onSecure(e:XMPPEvent):void</code><p>
+   Handle XMPP secure event and forward as our typed event.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:XMPPEvent</code></td>
+</tr>
+</table>
+</div>
+<a name="onSession()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">onSession</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function onSession(e:XMPPEvent):void</code><p>
+   Handle XMPP session event and forward as our typed event.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:XMPPEvent</code></td>
+</tr>
+</table>
+</div>
+<a name="start()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">start</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function start():void</code><p>
+   Connect to the xmpp server.
+   </p></div>
+<a name="stop()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">stop</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function stop():void</code><p>
+   Disconnect from the xmpp server.
+   </p></div>
+<a name="subscribe()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">subscribe</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function subscribe(tokenKey:String, tokenSecret:String):void</code><p>
+   Subscribe to a user's location updates. (NOT IMPLEMENTED)
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">tokenKey</span>:String</code> &mdash;  User's access token key
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">tokenSecret</span>:String</code> &mdash; User's access token secret
+   
+   </td>
+</tr>
+</table>
+</div>
+<a name="unSubscribe()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">unSubscribe</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function unSubscribe(tokenKey:String, tokenSecret:String):void</code><p>
+   Unsubscribe to a user's location updates. (NOT IMPLEMENTED)
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">tokenKey</span>:String</code> &mdash;  User's access token key
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">tokenSecret</span>:String</code> &mdash; User's access token secret
+   </td>
+</tr>
+</table>
+</div>
+<div class="detailSectionHeader">Event detail</div>
+<a name="event:userSuccess"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">userSuccess</td><td class="detailHeaderType">event&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href=""><code>FireEagleEvent</code></a>
+<br>
+<p></p><p>
+  Dispatched when a user location update has been received.
+  </p></div>
+<a name="event:xmppAuthFail"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">xmppAuthFail</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="RealTimeEvent.html"><code>RealTimeEvent</code></a>
+<br>
+<p></p><p>
+  Dispatched when XMPP authorization has failed..
+  </p></div>
+<a name="event:xmppAuthSuccess"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">xmppAuthSuccess</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="RealTimeEvent.html"><code>RealTimeEvent</code></a>
+<br>
+<p></p><p>
+  Dispatched when XMPP authorization has succeeded.
+  </p></div>
+<a name="event:xmppConnect"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">xmppConnect</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="RealTimeEvent.html"><code>RealTimeEvent</code></a>
+<br>
+<p></p><p>
+  Dispatched when the XMPP socket has been connected.
+  </p></div>
+<a name="event:xmppConnectFail"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">xmppConnectFail</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="RealTimeEvent.html"><code>RealTimeEvent</code></a>
+<br>
+<p></p><p>
+  Dispatched when the XMPP socket connection has failed.
+  </p></div>
+<a name="event:xmppDisconnect"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">xmppDisconnect</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="RealTimeEvent.html"><code>RealTimeEvent</code></a>
+<br>
+<p></p><p>
+  Dispatched when the XMPP socket has been disconnected.
+  </p></div>
+<a name="event:xmppSecure"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">xmppSecure</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="RealTimeEvent.html"><code>RealTimeEvent</code></a>
+<br>
+<p></p><p>
+  Dispatched when a secure XMPP connection is established.
+  </p></div>
+<a name="event:xmppSession"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">xmppSession</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="RealTimeEvent.html"><code>RealTimeEvent</code></a>
+<br>
+<p></p><p>
+  Dispatched when when the XMPP session has been established successfully.
+  </p></div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->

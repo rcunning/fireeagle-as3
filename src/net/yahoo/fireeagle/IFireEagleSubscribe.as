@@ -2,7 +2,7 @@
 Copyright (c) 2009 Yahoo! Inc.  All rights reserved.  
 The copyrights embodied in the content of this file are licensed under the BSD (revised) open source license
 */
-package net.yahoo.fireeagle.realtime
+package net.yahoo.fireeagle
 {
 	import flash.events.IEventDispatcher;
 	
@@ -53,11 +53,12 @@ package net.yahoo.fireeagle.realtime
 		/**
 		 * Unsubscribe to a user's location updates.
 		 * @param tokenKey		User's access token key
+		 * @param tokenSecret	User's access token secret
 		 * 
 		 * @return 
 		 * 
 		 */
-		function unSubscribe(tokenKey:String):void;
+		function unSubscribe(tokenKey:String, tokenSecret:String):void;
 		
 	}
 }

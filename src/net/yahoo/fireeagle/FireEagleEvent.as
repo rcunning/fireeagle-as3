@@ -110,7 +110,7 @@ package net.yahoo.fireeagle
 		/**
 		 * The event <code>FireEagleResponse</code> object.
 		 */	
-		protected var _response:FireEagleResponse;
+		protected var _response:IFireEagleResponse;
 		
 		/**
 		 * Creates a new <code>FireEagleEvent</code> object.
@@ -121,7 +121,7 @@ package net.yahoo.fireeagle
 		 * @param cancelable
 		 * 
 		 */	
-		public function FireEagleEvent(type:String, data:Object=null, response:FireEagleResponse=null, bubbles:Boolean=false, cancelable:Boolean=false)
+		public function FireEagleEvent(type:String, data:Object=null, response:IFireEagleResponse=null, bubbles:Boolean=false, cancelable:Boolean=false)
 		{
 			super(type, bubbles, cancelable);
 			_data = data;
@@ -143,7 +143,7 @@ package net.yahoo.fireeagle
 		 * @return 
 		 * 
 		 */	
-		public function get response():FireEagleResponse
+		public function get response():IFireEagleResponse
 		{
 			return _response;
 		}

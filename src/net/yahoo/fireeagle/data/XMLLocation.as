@@ -2,17 +2,18 @@
 Copyright (c) 2009 Yahoo! Inc.  All rights reserved.  
 The copyrights embodied in the content of this file are licensed under the BSD (revised) open source license
 */
-package net.yahoo.fireeagle
+package net.yahoo.fireeagle.data
 {
-	import net.yahoo.fireeagle.util.JSONObject;
-	import net.yahoo.fireeagle.location.LatLon;
+	import net.yahoo.fireeagle.IFireEagleLocation;
 	import net.yahoo.fireeagle.location.BoundingBox;
+	import net.yahoo.fireeagle.location.LatLon;
+	
 	/**
-	 * Wrapper class for JSON parsed Fire Eagle location objects.
+	 * Wrapper class for XML parsed Fire Eagle location objects.
 	 * @author Ryan Cunningham (rcunning@yahoo-inc.com)
 	 * 
 	 */
-	public class FireEagleLocation extends JSONObject
+	public class XMLLocation extends XMLObject implements IFireEagleLocation
 	{
 		/**
 		 * The date/time of the location update.
@@ -25,17 +26,22 @@ package net.yahoo.fireeagle
 		protected var _point:LatLon;
 		
 		/**
+		 * The georss namespace.
+		 */
+		protected var _georss:Namespace = new Namespace("http://www.georss.org/georss");
+		
+		/**
 		 * The bounding box for the location.
 		 */
 		protected var _boundingBox:BoundingBox;
 		
-				/**
-		 * Creates a new <code>FireEagleLocation</code> object.
-		 * @param obj		JSON object to parse
+		/**
+		 * Creates a new <code>XMLLocation</code> object.
+		 * @param xml		XML object to parse
 		 */
-		public function FireEagleLocation(obj:Object)
+		public function XMLLocation(xml:XML)
 		{
-			super(obj);
+			super(xml);
 		}
 		
 		/**
@@ -44,7 +50,7 @@ package net.yahoo.fireeagle
 		 */
 		public function get label():String
 		{
-			return data["label"];
+			return xml.label;
 		}
 		
 		/**
@@ -53,7 +59,7 @@ package net.yahoo.fireeagle
 		 */
 		public function get level():Number
 		{
-			return parseInt(data["level"]);
+			return parseInt(xml.level);
 		}
 		
 		/**
@@ -63,7 +69,7 @@ package net.yahoo.fireeagle
 		 */
 		public function get levelName():String
 		{
-			return data["level_name"];
+			return xml["level-name"];
 		}
 		
 		/**
@@ -72,7 +78,7 @@ package net.yahoo.fireeagle
 		 */
 		public function get name():String
 		{
-			return data["name"];
+			return xml.name;
 		}
 		
 		/**
@@ -81,7 +87,7 @@ package net.yahoo.fireeagle
 		 */
 		public function get placeId():String
 		{
-			return data["place_id"];
+			return xml["place-id"];
 		}
 		
 		/**
@@ -90,7 +96,7 @@ package net.yahoo.fireeagle
 		 */
 		public function get woeid():uint
 		{
-			return data["woeid"];
+			return xml.woeid;
 		}
 		
 		/**
@@ -100,7 +106,7 @@ package net.yahoo.fireeagle
 		public function get locatedAt():Date
 		{
 			if (_locatedAt == null) {
-				_locatedAt = parseToDate(data["located_at"]);
+				_locatedAt = ParseHelpers.parseToDate(xml["located-at"]);
 			}
 			return _locatedAt;
 		}
@@ -111,10 +117,8 @@ package net.yahoo.fireeagle
 		 */
 		public function get point():LatLon
 		{
-			if (_point == null && data.hasOwnProperty("geometry") && 
-				data.geometry.hasOwnProperty("coordinates") &&
-				data.geometry.hasOwnProperty("type") && data.geometry.type == "Point") {
-				_point = parseToLatLon(data.geometry.coordinates);
+			if (_point == null) {
+				_point = parseToLatLon(xml._georss::point[0]);
 			}
 			return _point;
 		}
@@ -125,9 +129,8 @@ package net.yahoo.fireeagle
 		 */
 		public function get boundingBox():BoundingBox
 		{
-			if (_boundingBox == null && data.hasOwnProperty("geometry") && 
-				data.geometry.hasOwnProperty("bbox")) {
-				_boundingBox = parseToBoundingBox(data.geometry.bbox);
+			if (_boundingBox == null) {
+				_boundingBox = parseToBoundingBox(xml._georss::box[0]);
 			}
 			return _boundingBox;
 		}
@@ -138,7 +141,7 @@ package net.yahoo.fireeagle
 		 */
 		public function get bestGuess():Boolean
 		{
-			return data["best_guess"] == "true";
+			return xml.@["best-guess"] == "true";
 		}
 		
 		/**
@@ -147,7 +150,7 @@ package net.yahoo.fireeagle
 		 */
 		public function toString():String
 		{
-			return "Location{label:"+label+
+			return "XMLLocation{label:"+label+
 			", level:"+level+
 			", levelName:"+levelName+
 			", name:"+name+

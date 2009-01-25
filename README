@@ -2,8 +2,9 @@ Primary classes for use for this code are:
 FireEagleMethod -- call any of the standard Fire Eagle API methods
 FireEagleAuth -- util class for authorizing new access tokens
 
-Requires source:
+Requires sources and libs:
 Yahoo! YOS lib: http://developer.yahoo.com/flash/yos/
+twhix lib: http://code.google.com/p/twhix/
 
 Note: 
 JSON parse classes taken from as3corelib: http://code.google.com/p/as3corelib/
@@ -14,9 +15,8 @@ Setup:
  -include source from <your extract path>/fireeagle-as3/src in your project
  -see docs in <your extract path>/fireeagle-as3/Docs
 -Download YOS to <your extract path>
- -include source from <your extract path>/yos_as3_sdk-1.1/Source
-
-Want TODO:
--add XMPP support
+ -include source from <your extract path>/yos_as3_sdk-1.1.1/Source
+-Download twhix to <your extract path>
+ -include swc from <your extract path>/twhix-read-only/twhix/bin/twhix.swc
 
 See http://fireeagle.yahoo.net for more info.

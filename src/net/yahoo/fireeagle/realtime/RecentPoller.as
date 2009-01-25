@@ -10,9 +10,11 @@ package net.yahoo.fireeagle.realtime
 	import flash.net.SharedObject;
 	import flash.utils.Timer;
 	
+	import net.yahoo.fireeagle.FireEagleConfig;
 	import net.yahoo.fireeagle.FireEagleEvent;
 	import net.yahoo.fireeagle.FireEagleMethod;
-	import net.yahoo.fireeagle.FireEagleUser;
+	import net.yahoo.fireeagle.IFireEagleSubscribe;
+	import net.yahoo.fireeagle.IFireEagleUser;
 	
 	/**
 	 * Dispatched when a <code>user</code> request succeeds.
@@ -95,17 +97,19 @@ package net.yahoo.fireeagle.realtime
 		 * @param generalKey		The OAuth general token key string to use for this connection. 
 		 * @param generalSecret		The OAuth general token secret string to use for this connection.
 		 * @param delayMs			The number of milliseconds between polls, defaults to 30 seconds (30000 ms).
+		 * @param format			Either <code>FireEagleConfig.FORMAT_JSON</code> or <code>FireEagleConfig.FORMAT_XML</code> (default), 
+		 * 							specifies the API result data type.
 		 * 
 		 * @return					A new <code>RecentPoller</code> object
 		 * 
 		 */
 		public function RecentPoller(consumerKey:String, consumerSecret:String, 
 									generalTokenKey:String, generalTokenSecret:String, 
-									delayMs:Number = 30000)
+									delayMs:Number = 30000, format:String = FireEagleConfig.FORMAT_XML)
 		{
 			super(null);
 			
-			_feRecentMethod = new FireEagleMethod(consumerKey, consumerSecret, generalTokenKey, generalTokenSecret);
+			_feRecentMethod = new FireEagleMethod(consumerKey, consumerSecret, generalTokenKey, generalTokenSecret, format);
 			_feRecentMethod.addEventListener(FireEagleEvent.RECENT_SUCCESS, onRecentSuccess);
 			_feRecentMethod.addEventListener(FireEagleEvent.RECENT_FAILURE, onForward);
 			_feRecentMethod.addEventListener(FireEagleEvent.SECURITY_ERROR, onForward);
@@ -172,11 +176,11 @@ package net.yahoo.fireeagle.realtime
 		/**
 		 * Unsubscribe to a user's location updates.
 		 * @param tokenKey		User's access token key
-		 * 
+		 * @param tokenSecret	User's access token secret
 		 * @return 
 		 * 
 		 */
-		public function unSubscribe(tokenKey:String):void
+		public function unSubscribe(tokenKey:String, tokenSecret:String):void
 		{
 			delete _cookie.data[tokenKey];
 			_cookie.flush();
@@ -197,7 +201,6 @@ package net.yahoo.fireeagle.realtime
 			args.page = _currentPage;
 			if (_nextCall != null) {
 				args.time = _nextCall.toString();
-				trace("calling with " + _nextCall.toString());
 			}
 			// fire the recent method
 			_feRecentMethod.recent(args);
@@ -221,7 +224,7 @@ package net.yahoo.fireeagle.realtime
 		 */
 		protected function onRecentSuccess(e:FireEagleEvent):void
 		{
-			for each (var u:FireEagleUser in e.response.users) {
+			for each (var u:IFireEagleUser in e.response.users) {
 				if (_cookie.data[u.token] != null) {
 					_feUserMethod.connection.updateToken(u.token, _cookie.data[u.token]);
 					_feUserMethod.user();

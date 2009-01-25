@@ -127,7 +127,7 @@ package net.yahoo.fireeagle
 		 */
 		public function getMobileAuthorizationUrl(appId:String):String
 		{
-			return FireEagleConfig.AUTH_SERVER + FireEagleConfig.MOBILE_AUTH_PATH + appId;
+			return FireEagleConfig.AUTH_WEB_SERVER + FireEagleConfig.MOBILE_AUTH_PATH + appId;
 		}
 		
 		/**
@@ -138,7 +138,7 @@ package net.yahoo.fireeagle
 		 */
 		public function get authorizationUrl():String
 		{
-			return FireEagleConfig.AUTH_SERVER + FireEagleConfig.AUTHORIZATION_PATH + '?' + OAUTH_TOKEN_PARAM + '=' + encodeURIComponent(_requestKey);
+			return FireEagleConfig.AUTH_WEB_SERVER + FireEagleConfig.AUTHORIZATION_PATH + '?' + OAUTH_TOKEN_PARAM + '=' + encodeURIComponent(_requestKey);
 		}
 		
 		/**

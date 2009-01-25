@@ -18,11 +18,15 @@ package net.yahoo.fireeagle
 		/**
 		 * The OAuth realm for Fire Eagle autorization.
 		 */
-		public static var OAUTH_REALM:String        = "fireeagle.yahoo.net";
+		public static var OAUTH_REALM:String        = "fireeagle.yahooapis.com";
 		/**
 		 * The protocol and hostname for the Fire Eagle autorization server.
 		 */
-		public static var AUTH_SERVER:String        = "https://fireeagle.yahoo.net";
+		public static var AUTH_SERVER:String        = "https://fireeagle.yahooapis.com";
+		/**
+		 * The protocol and hostname for the Fire Eagle web site server for auth.
+		 */
+		public static var AUTH_WEB_SERVER:String        = "https://fireeagle.yahoo.net";
 		/**
 		 * The path used to get a new request token from the authorization server.
 		 */

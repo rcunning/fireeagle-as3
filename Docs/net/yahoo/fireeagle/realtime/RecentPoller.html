@@ -41,7 +41,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">RecentPoller <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../../images/inherit-arrow.gif"> flash.events.EventDispatcher</td>
 </tr>
 <tr>
-<td class="classHeaderTableLabel">Implements</td><td><a href="IFireEagleSubscribe.html">IFireEagleSubscribe</a></td>
+<td class="classHeaderTableLabel">Implements</td><td><a href="../IFireEagleSubscribe.html">IFireEagleSubscribe</a></td>
 </tr>
 </table>
 <p></p>
@@ -141,7 +141,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
-<a class="signatureLink" href="#RecentPoller()">RecentPoller</a>(consumerKey:String, consumerSecret:String, generalTokenKey:String, generalTokenSecret:String, delayMs:Number = 30000)</div>
+<a class="signatureLink" href="#RecentPoller()">RecentPoller</a>(consumerKey:String, consumerSecret:String, generalTokenKey:String, generalTokenSecret:String, delayMs:Number = 30000, format:String)</div>
 <div class="summaryTableDescription">
    Class constructor.</div>
 </td><td class="summaryTableOwnerCol">RecentPoller</td>
@@ -181,7 +181,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
-<a class="signatureLink" href="#unSubscribe()">unSubscribe</a>(tokenKey:String):void</div>
+<a class="signatureLink" href="#unSubscribe()">unSubscribe</a>(tokenKey:String, tokenSecret:String):void</div>
 <div class="summaryTableDescription">
    Unsubscribe to a user's location updates.</div>
 </td><td class="summaryTableOwnerCol">RecentPoller</td>
@@ -362,7 +362,7 @@ showHideInherited();
 </tr>
 </table>
 <div class="detailBody">
-<code>public function RecentPoller(consumerKey:String, consumerSecret:String, generalTokenKey:String, generalTokenSecret:String, delayMs:Number = 30000)</code><p>
+<code>public function RecentPoller(consumerKey:String, consumerSecret:String, generalTokenKey:String, generalTokenSecret:String, delayMs:Number = 30000, format:String)</code><p>
    Class constructor.
    Creates a new <code>RecentPoller</code> object for the provided credentials. 
    
@@ -398,6 +398,14 @@ showHideInherited();
 </tr>
 <tr>
 <td width="20px"></td><td><code><span class="label">delayMs</span>:Number</code> (default = <code>30000</code>)<code></code> &mdash;   The number of milliseconds between polls, defaults to 30 seconds (30000 ms).
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">format</span>:String</code> &mdash;   Either <code>FireEagleConfig.FORMAT_JSON</code> or <code>FireEagleConfig.FORMAT_XML</code> (default), 
+          specifies the API result data type.
    
    </td>
 </tr>
@@ -518,13 +526,19 @@ showHideInherited();
 </tr>
 </table>
 <div class="detailBody">
-<code>public function unSubscribe(tokenKey:String):void</code><p>
+<code>public function unSubscribe(tokenKey:String, tokenSecret:String):void</code><p>
    Unsubscribe to a user's location updates.
    </p><span class="label">Parameters</span>
 <table border="0" cellspacing="0" cellpadding="0">
 <tr>
 <td width="20px"></td><td><code><span class="label">tokenKey</span>:String</code> &mdash;  User's access token key
-   
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">tokenSecret</span>:String</code> &mdash; User's access token secret
    </td>
 </tr>
 </table>

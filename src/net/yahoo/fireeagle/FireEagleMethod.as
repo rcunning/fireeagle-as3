@@ -10,6 +10,8 @@ package net.yahoo.fireeagle
 	import flash.events.EventDispatcher;
 	
 	import net.yahoo.fireeagle.oauth.OAuthConnection;
+	import net.yahoo.fireeagle.data.JSONResponse;
+	import net.yahoo.fireeagle.data.XMLResponse;
 	
 	/**
 	 * Dispatched when a <code>user</code> request succeeds.
@@ -95,7 +97,7 @@ package net.yahoo.fireeagle
 		/**
 		 * @protected
 		 */
-		protected var _format:String = FireEagleConfig.FORMAT_JSON;
+		protected var _format:String = FireEagleConfig.FORMAT_XML;
 		/**
 		 * @protected
 		 */
@@ -468,7 +470,7 @@ package net.yahoo.fireeagle
 				{
 					var rsp:String = response.responseText;
 					var ret:Object = rsp;
-					var feResponse:FireEagleResponse = null;
+					var feResponse:IFireEagleResponse = null;
 					if (self.getResponseStatusOk(response.status)) 
 					{
 						if (_parseResult) {
@@ -489,7 +491,7 @@ package net.yahoo.fireeagle
 								} else {
 									// successfully parsed JSON
 									ret = json;
-									feResponse = new FireEagleResponse(json);
+									feResponse = new JSONResponse(json);
 								}
 							} else {
 								var xml:XML = null;
@@ -501,6 +503,7 @@ package net.yahoo.fireeagle
 									return;
 								}
 								ret = xml;
+								feResponse = new XMLResponse(xml);
 							}
 						}
 						
