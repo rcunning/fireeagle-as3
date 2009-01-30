@@ -105,11 +105,11 @@ package net.yahoo.fireeagle.realtime
 		 */
 		public function RecentPoller(consumerKey:String, consumerSecret:String, 
 									generalTokenKey:String, generalTokenSecret:String, 
-									delayMs:Number = 30000, format:String = FireEagleConfig.FORMAT_XML)
+									delayMs:Number = 30000, formatClass:Class = null)
 		{
 			super(null);
 			
-			_feRecentMethod = new FireEagleMethod(consumerKey, consumerSecret, generalTokenKey, generalTokenSecret, format);
+			_feRecentMethod = new FireEagleMethod(consumerKey, consumerSecret, generalTokenKey, generalTokenSecret, formatClass);
 			_feRecentMethod.addEventListener(FireEagleEvent.RECENT_SUCCESS, onRecentSuccess);
 			_feRecentMethod.addEventListener(FireEagleEvent.RECENT_FAILURE, onForward);
 			_feRecentMethod.addEventListener(FireEagleEvent.SECURITY_ERROR, onForward);

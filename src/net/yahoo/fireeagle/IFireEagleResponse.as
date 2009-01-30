@@ -30,6 +30,11 @@ package net.yahoo.fireeagle
 		 */
 		function get locations():Array;
 		/**
+		 * <code>Object</code> that is the core data type of the response.
+		 * @returns Object
+		 */
+		function get data():Object;
+		/**
 		 * <code>String</code> representation.
 		 * @returns String
 		 */

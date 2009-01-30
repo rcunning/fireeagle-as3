@@ -4,13 +4,11 @@ The copyrights embodied in the content of this file are licensed under the BSD (
 */
 package net.yahoo.fireeagle
 {	
-	import com.adobe.serialization.json.JSON;
 	import com.yahoo.oauth.IOAuthSignatureMethod;
 	
 	import flash.events.EventDispatcher;
 	
 	import net.yahoo.fireeagle.oauth.OAuthConnection;
-	import net.yahoo.fireeagle.data.JSONResponse;
 	import net.yahoo.fireeagle.data.XMLResponse;
 	
 	/**
@@ -97,7 +95,7 @@ package net.yahoo.fireeagle
 		/**
 		 * @protected
 		 */
-		protected var _format:String = FireEagleConfig.FORMAT_XML;
+		protected var _formatClass:Class = XMLResponse;
 		/**
 		 * @protected
 		 */
@@ -118,13 +116,24 @@ package net.yahoo.fireeagle
 		}
 		
 		/**
-		 * The REST request result data format.  
+		 * The REST request result data format class.  
 		 *  
-		 * @return 					String specifying the result format, XML or JSON
+		 * @return 					The class of the result format, data.XMLResponse or data.JSONResponse
+		 * 
+		 */
+		public function get formatClass():Class {
+			return _formatClass;
+		}
+		
+		
+		/**
+		 * The REST request result data format name.  
+		 *  
+		 * @return 					The result format name, "XML" or "JSON"
 		 * 
 		 */
 		public function get format():String {
-			return _format;
+			return (_formatClass == XMLResponse ? "xml" : "json");
 		}
 		
 		/**
@@ -220,12 +229,12 @@ package net.yahoo.fireeagle
 		public function FireEagleMethod(
 			consumerKey:String, consumerSecret:String,
 			tokenKey:String, tokenSecret:String, 
-			format:String = null)
+			formatClass:Class = null)
 		{	
 			_connection = new OAuthConnection(consumerKey, consumerSecret, tokenKey, tokenSecret);
 			
-			if (format != null) {
-				_format = format;
+			if (formatClass != null) {
+				_formatClass = formatClass;
 			}
 		}
 		
@@ -360,7 +369,7 @@ package net.yahoo.fireeagle
 					_connection.consumer.secret, 
 					_connection.token.key, 
 					_connection.token.secret, 
-					format);
+					formatClass);
 		}
 		
 		
@@ -474,37 +483,14 @@ package net.yahoo.fireeagle
 					if (self.getResponseStatusOk(response.status)) 
 					{
 						if (_parseResult) {
-							if (self.format == FireEagleConfig.FORMAT_JSON) 
-							{	// parse the JSON, don't parse if format is XML
-								var json:Object = null;
-								try {
-									json = JSON.decode(rsp);
-								} catch (error:Error) {
-									// some json parse error
-									callback.failure(response);
-									return;
-								}
-								if (json.error) {
-									// could not parse json
-									callback.failure(response);
-									return;
-								} else {
-									// successfully parsed JSON
-									ret = json;
-									feResponse = new JSONResponse(json);
-								}
-							} else {
-								var xml:XML = null;
-								try {
-									xml = new XML(rsp);
-								} catch (error:Error) {
-									// some XML parse error
-									callback.failure(response);
-									return;
-								}
-								ret = xml;
-								feResponse = new XMLResponse(xml);
+							try {
+								feResponse = new formatClass(rsp);
+							}  catch (error:Error) {
+								// some parse error
+								callback.failure(response);
+								return;
 							}
+							ret = feResponse.data;
 						}
 						
 						if (success != null) {

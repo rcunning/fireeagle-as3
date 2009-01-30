@@ -328,8 +328,6 @@ package net.yahoo.fireeagle.oauth
 		{
 			var params:Array = new Array();
 			for (var key:String in args) {
-				// OAuth lib did not encode the oauth params (need for '+' and '/' in oath nonce and sig), but don't double-encode our params
-				//params.push(key+'='+(key.substring(0,6) == 'oauth_' ? encodeURIComponent(args[key]) : args[key]));
 				params.push(key+'='+args[key]);
 			}
 			params.sort();

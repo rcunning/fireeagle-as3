@@ -141,7 +141,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
-<a class="signatureLink" href="#RecentPoller()">RecentPoller</a>(consumerKey:String, consumerSecret:String, generalTokenKey:String, generalTokenSecret:String, delayMs:Number = 30000, format:String)</div>
+<a class="signatureLink" href="#RecentPoller()">RecentPoller</a>(consumerKey:String, consumerSecret:String, generalTokenKey:String, generalTokenSecret:String, delayMs:Number = 30000, formatClass:Class = null)</div>
 <div class="summaryTableDescription">
    Class constructor.</div>
 </td><td class="summaryTableOwnerCol">RecentPoller</td>
@@ -362,7 +362,7 @@ showHideInherited();
 </tr>
 </table>
 <div class="detailBody">
-<code>public function RecentPoller(consumerKey:String, consumerSecret:String, generalTokenKey:String, generalTokenSecret:String, delayMs:Number = 30000, format:String)</code><p>
+<code>public function RecentPoller(consumerKey:String, consumerSecret:String, generalTokenKey:String, generalTokenSecret:String, delayMs:Number = 30000, formatClass:Class = null)</code><p>
    Class constructor.
    Creates a new <code>RecentPoller</code> object for the provided credentials. 
    
@@ -404,7 +404,7 @@ showHideInherited();
 <td class="paramSpacer">&nbsp;</td>
 </tr>
 <tr>
-<td width="20px"></td><td><code><span class="label">format</span>:String</code> &mdash;   Either <code>FireEagleConfig.FORMAT_JSON</code> or <code>FireEagleConfig.FORMAT_XML</code> (default), 
+<td width="20px"></td><td><code><span class="label">formatClass</span>:Class</code> (default = <code>null</code>)<code></code> &mdash;   Either <code>FireEagleConfig.FORMAT_JSON</code> or <code>FireEagleConfig.FORMAT_XML</code> (default), 
           specifies the API result data type.
    
    </td>

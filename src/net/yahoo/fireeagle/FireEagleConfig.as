@@ -26,7 +26,7 @@ package net.yahoo.fireeagle
 		/**
 		 * The protocol and hostname for the Fire Eagle web site server for auth.
 		 */
-		public static var AUTH_WEB_SERVER:String        = "https://fireeagle.yahoo.net";
+		public static var AUTH_WEB_SERVER:String    = "https://fireeagle.yahoo.net";
 		/**
 		 * The path used to get a new request token from the authorization server.
 		 */
@@ -114,14 +114,5 @@ package net.yahoo.fireeagle
 		 * <code>API_PATH</code>.
 		 */
 		public static var WITHIN_API_PATH:String    = API_PATH + WITHIN_API_METHOD;
-		
-		/**
-		 * The REST response format type string for XML.
-		 */
-		public static const FORMAT_XML:String       = "xml";
-		/**
-		 * The REST response format type string for JSON.
-		 */
-		public static const FORMAT_JSON:String      = "json";
 	}
 }

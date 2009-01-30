@@ -6,6 +6,8 @@ package net.yahoo.fireeagle.data
 {
 	import net.yahoo.fireeagle.IFireEagleResponse;
 	
+	import com.adobe.serialization.json.JSON;
+	
 	/**
 	 * Wrapper class for JSON parsed Fire Eagle response objects.
 	 * @author Ryan Cunningham (rcunning@yahoo-inc.com)
@@ -24,11 +26,16 @@ package net.yahoo.fireeagle.data
 		
 		/**
 		 * Creates a new <code>JSONResponse</code> object.
-		 * @param obj
+		 * @param responseString	The response string
 		 */
-		public function JSONResponse(obj:Object)
+		public function JSONResponse(responseString:String)
 		{
-			super(obj);
+			super(JSON.decode(responseString));
+			
+			if (data.error) {
+				// could not parse json
+				throw new Error("JSON parse failed");
+			}
 		}
 		
 		/**

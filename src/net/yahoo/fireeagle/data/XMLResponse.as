@@ -24,11 +24,20 @@ package net.yahoo.fireeagle.data
 		
 		/**
 		 * Creates a new <code>XMLResponse</code> object.
-		 * @param obj
+		 * @param responseString	The response string
 		 */
-		public function XMLResponse(xml:XML)
+		public function XMLResponse(responseString:String)
 		{
-			super(xml);
+			super(new XML(responseString));
+		}
+		
+		/**
+		 * <code>Object</code> that is the XML data type of the response.
+		 * @returns Object
+		 */
+		public function get data():Object
+		{
+			return xml;
 		}
 		
 		/**

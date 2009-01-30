@@ -191,8 +191,7 @@ package net.yahoo.fireeagle.realtime
 		{
 			// hack out the namespaces to make it more friendly..this is not all that pretty
 			var xmlString:String = e.stanza.xml.toString();
-			xmlString = xmlString.replace(/\n/g, ""); // remove newlines so match will work
-			var a:Array = xmlString.match(/<rsp.*<\/rsp>/g);
+			var a:Array = xmlString.match(/<rsp.*<\/rsp>/gs);
 			var rsp:XML= new XML(a.length > 0 ? a[0] : ""); // parse back to XML
 			
 			// dispatch it like it was just a /user response
