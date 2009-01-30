@@ -17,7 +17,7 @@ package net.yahoo.fireeagle
 	 * @author Ryan Cunningham (rcunning@yahoo-inc.com)
 	 * 
 	 */
-	public interface IFireEagleSubscribe extends IEventDispatcher
+	public interface IFireEagleRealtime extends IEventDispatcher
 	{
 		/**
 		 * Start listening for subscriber updates.

@@ -17,7 +17,7 @@ package net.yahoo.fireeagle.realtime
 	import flash.events.EventDispatcher;
 	
 	import net.yahoo.fireeagle.FireEagleEvent;
-	import net.yahoo.fireeagle.IFireEagleSubscribe;
+	import net.yahoo.fireeagle.IFireEagleRealtime;
 	import net.yahoo.fireeagle.data.XMLResponse;
 	
 	/**
@@ -74,7 +74,7 @@ package net.yahoo.fireeagle.realtime
 	 * 
 	 * </listing>
 	 */
-	public class XMPPConnection extends EventDispatcher implements IFireEagleSubscribe
+	public class XMPPConnection extends EventDispatcher implements IFireEagleRealtime
 	{
 		/**
 		 * @protected

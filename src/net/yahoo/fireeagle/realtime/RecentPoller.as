@@ -13,7 +13,7 @@ package net.yahoo.fireeagle.realtime
 	import net.yahoo.fireeagle.FireEagleConfig;
 	import net.yahoo.fireeagle.FireEagleEvent;
 	import net.yahoo.fireeagle.FireEagleMethod;
-	import net.yahoo.fireeagle.IFireEagleSubscribe;
+	import net.yahoo.fireeagle.IFireEagleRealtime;
 	import net.yahoo.fireeagle.IFireEagleUser;
 	
 	/**
@@ -52,7 +52,7 @@ package net.yahoo.fireeagle.realtime
 	 * 
 	 * </listing>
 	 */
-	public class RecentPoller extends EventDispatcher implements IFireEagleSubscribe
+	public class RecentPoller extends EventDispatcher implements IFireEagleRealtime
 	{
 		/**
 		 * @protected
