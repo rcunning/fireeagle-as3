@@ -11,9 +11,11 @@ Download a copy of fireeagle-as3:
 
 [fireeagle-as3](http://github.com/rcunning/fireeagle-as3/tree/master# "fireeagle-as3")
 
+
 Or clone fireeagle-as3 source from github:
 
     $ git clone git://github.com/rcunning/fireeagle-as3.git
+
 
 Download the other required sources:
 
@@ -28,7 +30,7 @@ Setup:
       will create 
         <your extract path>/fireeagle-as3
         <your extract path>/yos_as3_sdk-1.1.1
-        <your extract path>/twhix-read-only _if you want XMPP support_
+        <your extract path>/twhix-read-only - if you want XMPP support
     Create a Flex Builder of Flash project of your choosing
     Include source from <your extract path>/fireeagle-as3/src in your project
     Include source from <your extract path>/yos_as3_sdk-1.1.1/Source
