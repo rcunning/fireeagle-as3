@@ -8,11 +8,11 @@ package net.yahoo.fireeagle.realtime
 	import com.hurlant.crypto.tls.TLSConfig;
 	import com.hurlant.crypto.tls.TLSEngine;
 	import com.hurlant.crypto.tls.TLSSocket;
-	import com.seesmic.twhix.StreamEvent;
-	import com.seesmic.twhix.XMPP;
-	import com.seesmic.twhix.XMPPEvent;
-	import com.seesmic.twhix.xep.publish_subscribe.PubSubEvent;
-	import com.seesmic.twhix.xep.publish_subscribe.PublishSubscribe;
+	import com.seesmic.as3.xmpp.StreamEvent;
+	import com.seesmic.as3.xmpp.XMPP;
+	import com.seesmic.as3.xmpp.XMPPEvent;
+	import com.seesmic.as3.xmpp.xep.publish_subscribe.PubSubEvent;
+	import com.seesmic.as3.xmpp.xep.publish_subscribe.PublishSubscribe;
 	
 	import flash.events.EventDispatcher;
 	

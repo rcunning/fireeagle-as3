@@ -21,7 +21,7 @@ Download the other required sources:
 
 [Yahoo! Y!OS AS3 library](http://developer.yahoo.com/flash/yos/ "Y!OS AS3 library")
 
-[twhix XMPP library](http://code.google.com/p/twhix/ "twhix XMPP library") - If you want XMPP support
+[Seesmic AS3 XMPP library](Seesmic AS3 XMPP lib: http://code.google.com/p/seesmic-as3-xmpp/ "Seesmic AS3 XMPP library") - If you want XMPP support
 
 
 Setup:
@@ -30,11 +30,12 @@ Setup:
       will create 
         <your extract path>/fireeagle-as3
         <your extract path>/yos_as3_sdk-1.1.1
-        <your extract path>/twhix-read-only - if you want XMPP support
+        <your extract path>/seesmic-as3-xmpp-read-only - if you want XMPP support
     Create a Flex Builder of Flash project of your choosing
     Include source from <your extract path>/fireeagle-as3/src in your project
     Include source from <your extract path>/yos_as3_sdk-1.1.1/Source
-    Include swc from <your extract path>/twhix-read-only/twhix/bin/twhix.swc
+    Include source from <your extract path>/seesmic-as3-xmpp-read-only/hurlant_tls
+    Include source from <your extract path>/seesmic-as3-xmpp-read-only/seesmic-as3-xmpp
     See fireeagle-as3 docs in <your extract path>/fireeagle-as3/Docs
 
 
@@ -52,7 +53,7 @@ class realtime/XMPPConnection -- connect to an XMPP server, receive userSuccess 
 Use [Switchboard](http://github.com/mojodna/switchboard "Switchboard") to subscribe user pubsub nodes
 
 
-## Sample Flex application that exercises all features of fireeagle-as3
+## Sample Flex application that exercises all features of fireeagle-as3 library
 
 [Fire Eagle AS3 Tester](http://github.com/rcunning/fireeagleas3tester/ "fireeagleas3tester")
 
