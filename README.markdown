@@ -21,7 +21,7 @@ Download the other required sources:
 
 [Yahoo! Y!OS AS3 library](http://developer.yahoo.com/flash/yos/ "Y!OS AS3 library")
 
-[Seesmic AS3 XMPP library](Seesmic AS3 XMPP lib: http://code.google.com/p/seesmic-as3-xmpp/ "Seesmic AS3 XMPP library") - If you want XMPP support
+[Seesmic AS3 XMPP library](http://code.google.com/p/seesmic-as3-xmpp/ "Seesmic AS3 XMPP library") - If you want XMPP support
 
 
 Setup:
