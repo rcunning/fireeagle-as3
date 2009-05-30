@@ -110,13 +110,14 @@ package net.yahoo.fireeagle
 		/**
 		 * Gets a new request token from the auth server. Success or failure returns asynchronously 
 		 * via <code>FireEagleEvent</code>.
+		 * @param oauthCallback		An optional callback to use once the request token has been authorized.
 		 * @return
 		 * 
 		 */
-		public function newRequestToken():void
+		public function newRequestToken(oauthCallback:String = "oob"):void
 		{	// uses consumer to generate a new request token
 			_connection.updateToken();
-			getRequest(FireEagleConfig.AUTH_SERVER + FireEagleConfig.REQUEST_TOKEN_PATH, FireEagleConfig.REQUEST_TOKEN_NAME);
+			getRequest(FireEagleConfig.AUTH_SERVER + FireEagleConfig.REQUEST_TOKEN_PATH, FireEagleConfig.REQUEST_TOKEN_NAME, { "oauth_callback": oauthCallback });
 		}
 		
 		/**
@@ -168,10 +169,10 @@ package net.yahoo.fireeagle
 		 * @return
 		 * 
 		 */
-		public function convertToAccessToken():void
+		public function convertToAccessToken(oauthVerifier:String):void
 		{	// uses consumer to generate call convert
 			_connection.updateToken(_requestKey, _requestSecret);
-			getRequest(FireEagleConfig.AUTH_SERVER + FireEagleConfig.ACCESS_TOKEN_PATH, FireEagleConfig.ACCESS_TOKEN_NAME);	
+			getRequest(FireEagleConfig.AUTH_SERVER + FireEagleConfig.ACCESS_TOKEN_PATH, FireEagleConfig.ACCESS_TOKEN_NAME, { "oauth_verifier": oauthVerifier });
 		}
 		
 		/**
